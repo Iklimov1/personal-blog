@@ -1,6 +1,6 @@
 ---
+layout: piece
 title: "test"
-date: 2026-23-01
 section: LIFE
 vibe: quiet · soft blue
 ---
