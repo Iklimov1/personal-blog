@@ -173,7 +173,7 @@ h1 {
 
 .site-title {
   font-family: "Hooey", "Comic Neue", "Pixel", sans-serif;
-  font-size: clamp(3.8rem, 8vw, 7rem);
+  font-size: clamp(7.6rem, 16vw, 14rem);
   font-weight: 900;
   letter-spacing: 0.12em;
   color: #ffffff;
@@ -355,7 +355,7 @@ h1 {
   }
 
   .site-title {
-    font-size: 2.5rem;
+    font-size: 5rem;
     margin-bottom: 20px;
     margin-top: 60px;
   }
@@ -407,11 +407,10 @@ h1 {
   }
 
   .scrap-nav {
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
-    left: 20px;
-    top: 20px;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .scrap-nav a {
