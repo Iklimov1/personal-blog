@@ -6,8 +6,17 @@ body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   color: #2e2e2e;
-  background: #ffb7d5;
-  background-image: url("/assets/textures/noise.png");
+  background-color: #ffb7d5;
+  background-image:
+    url("/assets/textures/noise.png"),
+    radial-gradient(circle at 10% 20%, #fff 2px, transparent 3px),
+    radial-gradient(circle at 80% 30%, #fff 2px, transparent 3px),
+    radial-gradient(circle at 50% 80%, #fff 2px, transparent 3px);
+  background-size:
+    auto,
+    120px 120px,
+    160px 160px,
+    200px 200px;
 }
 
 /* =========================
@@ -48,6 +57,7 @@ h1 {
   margin-bottom: 32px;
   font-weight: normal;
   font-family: "Pixel", sans-serif;
+  text-decoration: underline wavy #ff4fa1;
 }
 
 /* =========================
@@ -60,7 +70,7 @@ h1 {
 }
 
 /* =========================
-   CONTENT IMAGES (IN POSTS)
+   CONTENT IMAGES (POSTS)
    ========================= */
 
 .content img {
@@ -86,6 +96,30 @@ h1 {
   min-height: 100vh;
   text-align: center;
   padding-top: 80px;
+  position: relative;
+}
+
+/* floating stickers */
+.home::before,
+.home::after {
+  position: fixed;
+  font-size: 48px;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.home::before {
+  content: "★ 💜 ✿";
+  top: 40px;
+  right: 40px;
+  transform: rotate(-10deg);
+}
+
+.home::after {
+  content: "🩹 ✨ ★";
+  bottom: 60px;
+  left: 30px;
+  transform: rotate(12deg);
 }
 
 .site-title {
@@ -107,17 +141,33 @@ h1 {
 .pin {
   position: absolute;
   background: #fff;
-  padding: 16px 24px;
-  border: 2px solid #222;
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+  padding: 22px 30px;
+  border: 3px solid #222;
+  box-shadow:
+    8px 8px 0 rgba(0, 0, 0, 0.25),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.05);
   text-decoration: none;
   color: #222;
   font-family: "Handwritten", cursive;
-  transform: rotate(-3deg);
+  font-size: 1.4rem;
+  transform: rotate(-4deg);
+  transition: transform 0.15s ease;
+}
+
+.pin::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: crimson;
+  border-radius: 50%;
+  transform: translateX(-50%);
 }
 
 .pin:hover {
-  transform: rotate(2deg) scale(1.05);
+  transform: rotate(2deg) scale(1.1);
 }
 
 /* chaotic placement */
@@ -148,20 +198,15 @@ h1 {
    LAYOUT VARIANTS
    ========================= */
 
-/* Journal */
 .page.journal {
   background: repeating-linear-gradient(#fffdf8, #fffdf8 28px, #ffd6e8 29px);
-  font-family: Georgia, serif;
 }
 
-/* Recipe */
 .page.recipe {
   background: #fff6cc;
   border: 3px dashed #222;
-  font-family: "Times New Roman", serif;
 }
 
-/* Gallery page */
 .page.gallery {
   background: #f7f4ff;
 }
@@ -216,4 +261,61 @@ h1 {
   text-decoration: none;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
   font-size: 1.1rem;
+}
+
+/* =========================
+   MOBILE FRIENDLY
+   ========================= */
+
+@media (max-width: 768px) {
+  .page {
+    margin: 40px 16px;
+    padding: 32px 24px;
+    transform: none;
+  }
+
+  .page > * {
+    transform: none;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  /* stack pins */
+  .board {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .pin {
+    position: static;
+    width: 80%;
+    text-align: center;
+    transform: none;
+  }
+
+  .pin:hover {
+    transform: scale(1.05);
+  }
+
+  /* nav becomes bottom bar */
+  .scrap-nav {
+    flex-direction: row;
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .content img {
+    max-width: 90%;
+  }
+
+  .polaroids img {
+    width: 160px;
+  }
 }
