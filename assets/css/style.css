@@ -1,9 +1,11 @@
 /* Import local Hooey font */
 @font-face {
-  font-family: 'Hooey';
-  src: url('/assets/fonts/hooey-demo.regular.otf') format('opentype');
+  font-family: "Hooey";
+  src: url("/personal-blog/assets/fonts/hooey-demo.regular.otf")
+    format("opentype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 /* =========================
@@ -16,7 +18,7 @@ body {
   color: #2e2e2e;
   background-color: #91d5fa;
   background-image:
-    url("/assets/textures/noise.png"),
+    url("/personal-blog/assets/textures/noise.png"),
     radial-gradient(circle at 10% 20%, #ffffff 2px, transparent 3px),
     radial-gradient(circle at 80% 30%, #ffffff 2px, transparent 3px),
     radial-gradient(circle at 50% 80%, #ffffff 2px, transparent 3px);
@@ -156,27 +158,41 @@ h1 {
 
 .home {
   min-height: 100vh;
+  max-height: 100vh;
   text-align: center;
-  padding-top: 100px;
+  padding: 100px 40px 40px;
   position: relative;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 /* BIG FAT TITLE */
 
 .site-title {
-  font-family: 'Hooey', "Comic Neue", "Pixel", sans-serif;
+  font-family: "Hooey", "Comic Neue", "Pixel", sans-serif;
   font-size: clamp(3.8rem, 8vw, 7rem);
   font-weight: 900;
   letter-spacing: 0.12em;
   color: #ffffff;
-  margin-bottom: 48px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .board {
   position: relative;
   width: 100%;
-  height: 420px;
+  max-width: 900px;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
 }
 
 /* =========================
@@ -184,7 +200,7 @@ h1 {
    ========================= */
 
 .pin {
-  position: absolute;
+  position: static;
   background: #ffffff;
   padding: 22px 32px;
   border: 3px solid #222;
@@ -214,34 +230,30 @@ h1 {
 }
 
 .pin:hover {
-  transform: rotate(2deg) scale(1.1);
+  transform: rotate(0deg) scale(1.05);
 }
 
-/* chaotic placement */
-.pin-journal {
-  top: 40px;
-  left: 20%;
+.pin:nth-child(1) {
+  transform: rotate(-4deg);
 }
 
-.pin-recipes {
-  top: 190px;
-  left: 55%;
+.pin:nth-child(2) {
+  transform: rotate(2deg);
 }
 
-.pin-gallery {
-  top: 90px;
-  left: 65%;
+.pin:nth-child(3) {
+  transform: rotate(-3deg);
 }
 
-.pin-learnings {
-  top: 260px;
-  left: 25%;
+.pin:nth-child(4) {
+  transform: rotate(5deg);
 }
 
 .whisper {
   font-family: "Handwritten", cursive;
-  margin-top: 40px;
+  margin-top: 20px;
   color: #3865ed;
+  flex-shrink: 0;
 }
 
 /* =========================
@@ -333,34 +345,65 @@ h1 {
   }
 
   .home {
-    padding-top: 80px;
+    min-height: 100vh;
+    max-height: 100vh;
+    padding: 20px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
   }
 
   .site-title {
-    font-size: 3rem;
-    margin-bottom: 60px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-top: 60px;
   }
 
   .board {
+    position: static;
     height: auto;
     width: 100%;
     max-width: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    align-items: center;
+    gap: 16px;
+    flex-grow: 1;
+    justify-content: center;
   }
 
   .pin {
-    position: relative;
-    width: 100%;
+    position: static !important;
+    width: 90%;
+    max-width: 340px;
     margin: 0;
-    transform: rotate(-1deg);
     box-sizing: border-box;
+    top: auto !important;
+    left: auto !important;
   }
 
-  .pin:nth-child(even) {
+  .pin:nth-child(1) {
+    transform: rotate(-2deg);
+  }
+
+  .pin:nth-child(2) {
     transform: rotate(1deg);
+  }
+
+  .pin:nth-child(3) {
+    transform: rotate(-1deg);
+  }
+
+  .pin:nth-child(4) {
+    transform: rotate(2deg);
+  }
+
+  .whisper {
+    margin-top: 0;
+    font-size: 0.9rem;
+    flex-shrink: 0;
   }
 
   .scrap-nav {
