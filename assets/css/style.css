@@ -57,7 +57,6 @@ h1 {
   margin-bottom: 32px;
   font-weight: normal;
   font-family: "Pixel", sans-serif;
-  text-decoration: underline wavy #ff4fa1;
 }
 
 /* =========================
@@ -106,20 +105,89 @@ h1 {
   font-size: 48px;
   opacity: 0.85;
   pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-10deg); }
+  50% { transform: translateY(-10px) rotate(-8deg); }
 }
 
 .home::before {
   content: "★ 💜 ✿";
   top: 40px;
   right: 40px;
-  transform: rotate(-10deg);
 }
 
 .home::after {
-  content: "🩹 ✨ ★";
+  content: "✨ ★";
   bottom: 60px;
   left: 30px;
-  transform: rotate(12deg);
+}
+
+/* scattered decorative elements using pseudo elements on body */
+body.home {
+  overflow-x: hidden;
+}
+
+body.home .site-title::before {
+  content: "🌸";
+  position: fixed;
+  top: 15%;
+  left: 10%;
+  font-size: 36px;
+  opacity: 0.7;
+  transform: rotate(25deg);
+}
+
+body.home .site-title::after {
+  content: "💫";
+  position: fixed;
+  top: 70%;
+  right: 15%;
+  font-size: 40px;
+  opacity: 0.75;
+  transform: rotate(-15deg);
+}
+
+body.home .whisper::before {
+  content: "✨";
+  position: fixed;
+  top: 45%;
+  left: 8%;
+  font-size: 32px;
+  opacity: 0.6;
+  transform: rotate(45deg);
+}
+
+body.home .whisper::after {
+  content: "🦋";
+  position: fixed;
+  bottom: 30%;
+  right: 8%;
+  font-size: 38px;
+  opacity: 0.65;
+  transform: rotate(-20deg);
+}
+
+body.home .board::before {
+  content: "🌟";
+  position: fixed;
+  top: 25%;
+  right: 25%;
+  font-size: 28px;
+  opacity: 0.7;
+  transform: rotate(10deg);
+}
+
+body.home .board::after {
+  content: "💕";
+  position: fixed;
+  bottom: 20%;
+  left: 15%;
+  font-size: 34px;
+  opacity: 0.6;
+  transform: rotate(-30deg);
 }
 
 .site-title {
@@ -268,9 +336,13 @@ h1 {
    ========================= */
 
 @media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
   .page {
-    margin: 40px 16px;
-    padding: 32px 24px;
+    margin: 60px 20px 40px;
+    padding: 40px 28px;
     transform: none;
   }
 
@@ -279,7 +351,20 @@ h1 {
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .meta {
+    font-size: 0.9rem;
+  }
+
+  /* home page mobile adjustments */
+  .home {
+    padding-top: 100px;
+  }
+
+  .site-title {
+    font-size: 2.5rem;
   }
 
   /* stack pins */
@@ -289,26 +374,35 @@ h1 {
     flex-direction: column;
     gap: 24px;
     align-items: center;
+    margin-top: 40px;
   }
 
   .pin {
     position: static;
-    width: 80%;
+    width: 85%;
+    max-width: 280px;
     text-align: center;
     transform: none;
+    font-size: 1.2rem;
   }
 
   .pin:hover {
     transform: scale(1.05);
   }
 
-  /* nav becomes bottom bar */
+  /* nav becomes top bar */
   .scrap-nav {
     flex-direction: row;
-    top: auto;
-    bottom: 20px;
+    top: 10px;
     left: 50%;
+    bottom: auto;
     transform: translateX(-50%);
+    gap: 8px;
+  }
+
+  .scrap-nav a {
+    padding: 10px 12px;
+    font-size: 1.3rem;
   }
 
   .content img {
@@ -317,5 +411,15 @@ h1 {
 
   .polaroids img {
     width: 160px;
+  }
+
+  /* hide some decorative elements on mobile */
+  body.home .site-title::before,
+  body.home .site-title::after,
+  body.home .whisper::before,
+  body.home .whisper::after,
+  body.home .board::before,
+  body.home .board::after {
+    display: none;
   }
 }
