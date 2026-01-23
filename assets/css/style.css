@@ -1,49 +1,219 @@
-/* --- Base --- */
+/* =========================
+   BASE
+   ========================= */
+
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   color: #2e2e2e;
-  background: #efe9dd;
-  background-image: url("/assets/textures/fabric.png");
+  background: #ffb7d5;
+  background-image: url("/assets/textures/noise.png");
 }
 
-/* --- Paper page --- */
+/* =========================
+   PAGE SHELL
+   ========================= */
+
 .page {
-  max-width: 700px;
-  margin: 80px auto;
+  max-width: 760px;
+  margin: 100px auto;
   background: #fffdf7;
-  padding: 64px;
-  border: 2px solid #9bb7d4;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.08);
+  padding: 56px 64px;
+  border: 3px solid #222;
+  box-shadow:
+    10px 10px 0 #ff8ccf,
+    16px 16px 0 rgba(0, 0, 0, 0.1);
+  transform: rotate(-0.6deg);
+  position: relative;
 }
 
-/* --- Metadata --- */
+.page > * {
+  transform: rotate(0.6deg);
+}
+
+/* =========================
+   METADATA + TITLES
+   ========================= */
+
 .meta {
   font-size: 0.85rem;
   letter-spacing: 0.08em;
-  color: #6b85a6;
+  color: #ff4fa1;
   margin-bottom: 24px;
-  text-transform: uppercase;
+  font-family: "Handwritten", cursive;
 }
 
-/* --- Title --- */
 h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 32px;
   font-weight: normal;
+  font-family: "Pixel", sans-serif;
 }
 
-/* --- Text --- */
+/* =========================
+   CONTENT
+   ========================= */
+
 .content p {
   line-height: 1.7;
   margin-bottom: 1.4em;
 }
 
-/* --- Images (optional) --- */
+/* =========================
+   CONTENT IMAGES (IN POSTS)
+   ========================= */
+
 .content img {
-  max-width: 70%;
+  max-width: 65%;
   display: block;
   margin: 40px auto;
   background: white;
-  padding: 8px;
+  padding: 10px;
+  border: 2px solid #222;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg);
+}
+
+.content img:nth-of-type(even) {
+  transform: rotate(2deg);
+}
+
+/* =========================
+   HOME PAGE
+   ========================= */
+
+.home {
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.site-title {
+  font-family: "Pixel", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.board {
+  position: relative;
+  width: 100%;
+  height: 420px;
+}
+
+/* =========================
+   HOME PINS
+   ========================= */
+
+.pin {
+  position: absolute;
+  background: #fff;
+  padding: 16px 24px;
+  border: 2px solid #222;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: #222;
+  font-family: "Handwritten", cursive;
+  transform: rotate(-3deg);
+}
+
+.pin:hover {
+  transform: rotate(2deg) scale(1.05);
+}
+
+/* chaotic placement */
+.pin-journal {
+  top: 40px;
+  left: 20%;
+}
+.pin-recipes {
+  top: 190px;
+  left: 55%;
+}
+.pin-gallery {
+  top: 90px;
+  left: 65%;
+}
+.pin-learnings {
+  top: 260px;
+  left: 25%;
+}
+
+.whisper {
+  font-family: "Handwritten", cursive;
+  margin-top: 40px;
+  color: #ff4fa1;
+}
+
+/* =========================
+   LAYOUT VARIANTS
+   ========================= */
+
+/* Journal */
+.page.journal {
+  background: repeating-linear-gradient(#fffdf8, #fffdf8 28px, #ffd6e8 29px);
+  font-family: Georgia, serif;
+}
+
+/* Recipe */
+.page.recipe {
+  background: #fff6cc;
+  border: 3px dashed #222;
+  font-family: "Times New Roman", serif;
+}
+
+/* Gallery page */
+.page.gallery {
+  background: #f7f4ff;
+}
+
+/* =========================
+   GALLERY
+   ========================= */
+
+.polaroids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.polaroids img {
+  width: 220px;
+  background: white;
+  padding: 12px 12px 28px;
+  border: 2px solid #222;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.25);
+  transform: rotate(-3deg);
+}
+
+.polaroids img:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.polaroids img:hover {
+  transform: scale(1.05) rotate(0deg);
+}
+
+/* =========================
+   SCRAP NAV
+   ========================= */
+
+.scrap-nav {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10;
+}
+
+.scrap-nav a {
+  background: #fff;
+  padding: 8px 10px;
+  border: 2px solid #222;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <title>{{ page.title }}</title>
@@ -16,11 +16,12 @@
       <a href="/gallery">📸</a>
     </nav>
 
-    <main class="page">
-      <div class="meta">{{ page.section }} · {{ page.vibe }}</div>
+    <main class="page journal">
+      <div class="meta">
+        {{ page.date | date: "%B %d, %Y" }} · {{ page.vibe }}
+      </div>
 
       <h1>{{ page.title }}</h1>
-
       <div class="content">{{ content }}</div>
     </main>
   </body>
