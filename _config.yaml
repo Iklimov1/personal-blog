@@ -3,3 +3,5 @@ markdown: kramdown
 theme: null
 permalink: pretty
 future: true
+baseurl: "/personal-blog"
+url: "https://iklimov1.github.io"
