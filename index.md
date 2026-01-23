@@ -8,5 +8,6 @@ title: Home
 Recent posts:
 
 {% for post in site.posts %}
+
 - [{{ post.title }}]({{ post.url }}) — {{ post.section }} · {{ post.vibe }}
-{% endfor %}
+  {% endfor %}
