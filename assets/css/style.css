@@ -109,12 +109,17 @@ h1 {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotate(-10deg); }
-  50% { transform: translateY(-10px) rotate(-8deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-8deg);
+  }
 }
 
 .home::before {
-  content: "★ 💜 ✿";
+  content: "💜 ✿";
   top: 40px;
   right: 40px;
 }
@@ -337,12 +342,12 @@ body.home .board::after {
 
 @media (max-width: 768px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .page {
-    margin: 60px 20px 40px;
-    padding: 40px 28px;
+    margin: 80px 20px 40px;
+    padding: 48px 32px;
     transform: none;
   }
 
@@ -351,20 +356,21 @@ body.home .board::after {
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .meta {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   /* home page mobile adjustments */
   .home {
-    padding-top: 100px;
+    padding-top: 120px;
   }
 
   .site-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
   }
 
   /* stack pins */
@@ -372,37 +378,48 @@ body.home .board::after {
     height: auto;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 28px;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 50px;
   }
 
   .pin {
     position: static;
-    width: 85%;
-    max-width: 280px;
+    width: 90%;
+    max-width: 320px;
     text-align: center;
     transform: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    padding: 28px 36px;
   }
 
   .pin:hover {
     transform: scale(1.05);
   }
 
-  /* nav becomes top bar */
+  /* nav at top - larger */
   .scrap-nav {
     flex-direction: row;
-    top: 10px;
+    top: 15px;
     left: 50%;
     bottom: auto;
     transform: translateX(-50%);
-    gap: 8px;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   .scrap-nav a {
-    padding: 10px 12px;
-    font-size: 1.3rem;
+    padding: 12px 16px;
+    font-size: 1.6rem;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
   }
 
   .content img {
@@ -410,7 +427,12 @@ body.home .board::after {
   }
 
   .polaroids img {
-    width: 160px;
+    width: 180px;
+  }
+
+  .whisper {
+    font-size: 1.1rem;
+    margin-top: 60px;
   }
 
   /* hide some decorative elements on mobile */
