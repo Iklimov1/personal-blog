@@ -183,7 +183,6 @@ h1 {
   min-height: 100vh;
   max-height: 100vh;
   text-align: center;
-  padding: 100px 40px 40px;
   position: relative;
   z-index: 3;
   display: flex;
@@ -196,7 +195,7 @@ h1 {
 
 .site-title {
   font-family: "Hooey", "Comic Neue", "Pixel", sans-serif;
-  font-size: clamp(7.6rem, 16vw, 14rem);
+  font-size: clamp(9rem, 16vw, 14rem);
   font-weight: 900;
   letter-spacing: 0.12em;
   color: #ffffff;
@@ -358,7 +357,7 @@ h1 {
   }
 
   .page {
-    margin: 40px 16px;
+    margin: 80px 16px 40px;
     padding: 40px 24px;
     transform: none;
   }
@@ -369,12 +368,10 @@ h1 {
 
   .home {
     min-height: 100vh;
-    max-height: 100vh;
-    padding: 20px 20px 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
+    padding: 20px 20px 30px;
   }
 
   .site-title {
@@ -431,12 +428,14 @@ h1 {
 
   .scrap-nav {
     flex-direction: row;
-    gap: 16px;
+    gap: 12px;
     left: 50%;
+    top: 16px;
     transform: translateX(-50%);
   }
 
   .scrap-nav a {
     width: auto;
+    padding: 10px 12px;
   }
 }
