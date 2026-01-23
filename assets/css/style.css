@@ -30,7 +30,7 @@ body {
   padding: 56px 64px;
   border: 3px solid #222;
   box-shadow:
-    10px 10px 0 #ff8ccf,
+    10px 10px 0 #4da5f3,
     16px 16px 0 rgba(0, 0, 0, 0.1);
   transform: rotate(-0.6deg);
   position: relative;
@@ -47,7 +47,7 @@ body {
 .meta {
   font-size: 0.85rem;
   letter-spacing: 0.08em;
-  color: #ff4fa1;
+  color: #3865ed;
   margin-bottom: 24px;
   font-family: "Handwritten", cursive;
 }
@@ -422,7 +422,7 @@ body.home .board::after {
     background: rgba(255, 255, 255, 0.95);
     padding: 10px 14px;
     border-radius: 12px;
-    box-shadow: 
+    box-shadow:
       0 4px 12px rgba(0, 0, 0, 0.15),
       inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   }
