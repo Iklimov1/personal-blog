@@ -9,14 +9,69 @@ body {
   background-color: #ffb7d5;
   background-image:
     url("/assets/textures/noise.png"),
-    radial-gradient(circle at 10% 20%, #fff 2px, transparent 3px),
-    radial-gradient(circle at 80% 30%, #fff 2px, transparent 3px),
-    radial-gradient(circle at 50% 80%, #fff 2px, transparent 3px);
+    radial-gradient(circle at 10% 20%, #ffffff 2px, transparent 3px),
+    radial-gradient(circle at 80% 30%, #ffffff 2px, transparent 3px),
+    radial-gradient(circle at 50% 80%, #ffffff 2px, transparent 3px);
   background-size:
     auto,
     120px 120px,
     160px 160px,
     200px 200px;
+}
+
+/* =========================
+   STICKER WALL (BACKGROUND)
+   ========================= */
+
+.sticker-wall {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sticker {
+  position: absolute;
+  width: 180px;
+  opacity: 0.95;
+  filter: drop-shadow(4px 6px 0 rgba(0, 0, 0, 0.2));
+}
+
+/* chaotic placements */
+.sticker.s1 {
+  top: 20%;
+  left: 8%;
+  transform: rotate(-6deg);
+}
+
+.sticker.s2 {
+  top: 55%;
+  left: 18%;
+  transform: rotate(4deg);
+}
+
+.sticker.s3 {
+  top: 30%;
+  right: 14%;
+  transform: rotate(-3deg);
+}
+
+.sticker.s4 {
+  bottom: 14%;
+  right: 10%;
+  transform: rotate(6deg);
+}
+
+/* faux tape */
+.sticker::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 35%;
+  width: 60px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.65);
+  transform: rotate(-4deg);
 }
 
 /* =========================
@@ -34,6 +89,7 @@ body {
     16px 16px 0 rgba(0, 0, 0, 0.1);
   transform: rotate(-0.6deg);
   position: relative;
+  z-index: 3;
 }
 
 .page > * {
@@ -55,7 +111,6 @@ body {
 h1 {
   font-size: 2.2rem;
   margin-bottom: 32px;
-  font-weight: normal;
   font-family: "Pixel", sans-serif;
 }
 
@@ -69,7 +124,7 @@ h1 {
 }
 
 /* =========================
-   CONTENT IMAGES (POSTS)
+   CONTENT IMAGES
    ========================= */
 
 .content img {
@@ -94,111 +149,24 @@ h1 {
 .home {
   min-height: 100vh;
   text-align: center;
-  padding-top: 80px;
+  padding-top: 100px;
   position: relative;
+  z-index: 3;
 }
 
-/* floating stickers */
-.home::before,
-.home::after {
-  position: fixed;
-  font-size: 48px;
-  opacity: 0.85;
-  pointer-events: none;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-10deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(-8deg);
-  }
-}
-
-.home::before {
-  content: "💜 ✿";
-  top: 40px;
-  right: 40px;
-}
-
-.home::after {
-  content: "✨ ★";
-  bottom: 60px;
-  left: 30px;
-}
-
-/* scattered decorative elements using pseudo elements on body */
-body.home {
-  overflow-x: hidden;
-}
-
-body.home .site-title::before {
-  content: "🌸";
-  position: fixed;
-  top: 15%;
-  left: 10%;
-  font-size: 36px;
-  opacity: 0.7;
-  transform: rotate(25deg);
-}
-
-body.home .site-title::after {
-  content: "💫";
-  position: fixed;
-  top: 70%;
-  right: 15%;
-  font-size: 40px;
-  opacity: 0.75;
-  transform: rotate(-15deg);
-}
-
-body.home .whisper::before {
-  content: "✨";
-  position: fixed;
-  top: 45%;
-  left: 8%;
-  font-size: 32px;
-  opacity: 0.6;
-  transform: rotate(45deg);
-}
-
-body.home .whisper::after {
-  content: "🦋";
-  position: fixed;
-  bottom: 30%;
-  right: 8%;
-  font-size: 38px;
-  opacity: 0.65;
-  transform: rotate(-20deg);
-}
-
-body.home .board::before {
-  content: "🌟";
-  position: fixed;
-  top: 25%;
-  right: 25%;
-  font-size: 28px;
-  opacity: 0.7;
-  transform: rotate(10deg);
-}
-
-body.home .board::after {
-  content: "💕";
-  position: fixed;
-  bottom: 20%;
-  left: 15%;
-  font-size: 34px;
-  opacity: 0.6;
-  transform: rotate(-30deg);
-}
+/* BIG FAT TITLE */
 
 .site-title {
-  font-family: "Pixel", sans-serif;
-  font-size: 3rem;
-  margin-bottom: 40px;
+  font-family: "Baloo 2", "Comic Neue", "Pixel", sans-serif;
+  font-size: clamp(3.8rem, 8vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin-bottom: 48px;
+
+  text-shadow:
+    4px 4px 0 #4da5f3,
+    8px 8px 0 #3865ed;
 }
 
 .board {
@@ -213,8 +181,8 @@ body.home .board::after {
 
 .pin {
   position: absolute;
-  background: #fff;
-  padding: 22px 30px;
+  background: #ffffff;
+  padding: 22px 32px;
   border: 3px solid #222;
   box-shadow:
     8px 8px 0 rgba(0, 0, 0, 0.25),
@@ -227,15 +195,17 @@ body.home .board::after {
   transition: transform 0.15s ease;
 }
 
+/* BIG PUSH PIN */
 .pin::before {
   content: "";
   position: absolute;
-  top: 8px;
+  top: -14px;
   left: 50%;
-  width: 10px;
-  height: 10px;
-  background: crimson;
+  width: 16px;
+  height: 16px;
+  background: #3865ed;
   border-radius: 50%;
+  border: 2px solid #222;
   transform: translateX(-50%);
 }
 
@@ -248,14 +218,17 @@ body.home .board::after {
   top: 40px;
   left: 20%;
 }
+
 .pin-recipes {
   top: 190px;
   left: 55%;
 }
+
 .pin-gallery {
   top: 90px;
   left: 65%;
 }
+
 .pin-learnings {
   top: 260px;
   left: 25%;
@@ -264,7 +237,7 @@ body.home .board::after {
 .whisper {
   font-family: "Handwritten", cursive;
   margin-top: 40px;
-  color: #ff4fa1;
+  color: #3865ed;
 }
 
 /* =========================
@@ -272,7 +245,7 @@ body.home .board::after {
    ========================= */
 
 .page.journal {
-  background: repeating-linear-gradient(#fffdf8, #fffdf8 28px, #ffd6e8 29px);
+  background: repeating-linear-gradient(#fffdf8, #fffdf8 28px, #dbe6ff 29px);
 }
 
 .page.recipe {
@@ -328,7 +301,7 @@ body.home .board::after {
 }
 
 .scrap-nav a {
-  background: #fff;
+  background: #ffffff;
   padding: 8px 10px;
   border: 2px solid #222;
   text-decoration: none;
@@ -337,12 +310,12 @@ body.home .board::after {
 }
 
 /* =========================
-   MOBILE FRIENDLY
+   MOBILE
    ========================= */
 
 @media (max-width: 768px) {
-  body {
-    font-size: 18px;
+  .sticker {
+    display: none;
   }
 
   .page {
@@ -355,110 +328,27 @@ body.home .board::after {
     transform: none;
   }
 
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  .meta {
-    font-size: 1rem;
-  }
-
-  /* home page mobile adjustments */
-  .home {
-    padding-top: 80px;
-  }
-
   .site-title {
-    font-size: 2.8rem;
-    margin-bottom: 40px;
-    margin-top: 20px;
+    font-size: 3rem;
   }
 
-  /* stack pins - keep scrapbook feel */
   .board {
     height: auto;
-    position: relative;
     width: 90%;
-    max-width: 400px;
-    margin: 60px auto 40px;
-    padding: 20px;
+    max-width: 420px;
+    margin: 60px auto;
   }
 
   .pin {
     position: relative;
     width: 100%;
     margin: 20px 0;
-    text-align: center;
-    font-size: 1.4rem;
-    padding: 24px 32px;
-    /* Keep some playful rotation */
     transform: rotate(-1deg);
   }
 
-  .pin:nth-child(2) {
-    transform: rotate(1deg);
-  }
-
-  .pin:nth-child(3) {
-    transform: rotate(-0.5deg);
-  }
-
-  .pin:nth-child(4) {
-    transform: rotate(0.8deg);
-  }
-
-  .pin:hover {
-    transform: scale(1.05) rotate(0deg);
-  }
-
-  /* nav at top - with spacing */
   .scrap-nav {
     flex-direction: row;
-    top: 12px;
     left: 50%;
-    bottom: auto;
     transform: translateX(-50%);
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 10px 14px;
-    border-radius: 12px;
-    box-shadow:
-      0 4px 12px rgba(0, 0, 0, 0.15),
-      inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-  }
-
-  .scrap-nav a {
-    padding: 12px 14px;
-    font-size: 1.5rem;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-  }
-
-  .content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-  }
-
-  .content img {
-    max-width: 90%;
-  }
-
-  .polaroids img {
-    width: 180px;
-  }
-
-  .whisper {
-    font-size: 1.1rem;
-    margin-top: 60px;
-  }
-
-  /* hide some decorative elements on mobile */
-  body.home .site-title::before,
-  body.home .site-title::after,
-  body.home .whisper::before,
-  body.home .whisper::after,
-  body.home .board::before,
-  body.home .board::after {
-    display: none;
   }
 }
