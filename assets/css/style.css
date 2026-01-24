@@ -214,7 +214,7 @@ h1 {
 .title-wrap {
   position: relative;
   display: inline-block;
-  margin: 0 auto 60px;
+  margin-bottom: 60px;
 }
 
 /* the globe itself */
@@ -228,8 +228,19 @@ h1 {
   z-index: -1;
   opacity: 0.35;
   pointer-events: none;
+  animation: spin-globe 24s linear infinite;
   filter: contrast(1.1) saturate(1.2)
     drop-shadow(6px 6px 0 rgba(77, 165, 243, 0.25));
+}
+
+/* slow cozy rotation */
+@keyframes spin-globe {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .board {
