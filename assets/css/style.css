@@ -251,6 +251,7 @@ h1 {
    ========================= */
 
 .title-wrap {
+  margin: 11px;
   position: relative;
   display: inline-block;
   margin-bottom: 60px;
