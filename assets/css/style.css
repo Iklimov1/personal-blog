@@ -142,6 +142,7 @@ body {
 }
 
 h1 {
+  margin-top: 0;
   font-size: 2.2rem;
   margin-bottom: 32px;
   font-family: "Pixel", sans-serif;
@@ -193,6 +194,7 @@ h1 {
 /* BIG FAT TITLE */
 
 .site-title {
+  text-align: center;
   font-family: "Hooey", "Comic Neue", "Pixel", sans-serif;
   font-size: clamp(8rem, 16vw, 14rem);
   font-weight: 900;
@@ -200,7 +202,7 @@ h1 {
   color: #ffffff;
   margin-bottom: 20px;
   flex-shrink: 0;
-  text-shadow: 
+  text-shadow:
     0 0 40px rgba(45, 185, 251, 0.6),
     0 0 80px rgba(45, 185, 251, 0.4),
     0 0 120px rgba(45, 185, 251, 0.2);
@@ -315,6 +317,7 @@ h1 {
 }
 
 .whisper {
+  text-align: center;
   font-family: "Handwritten", cursive;
   margin-top: 20px;
   color: #ff4fa1;
@@ -383,11 +386,11 @@ h1 {
 
 .scrap-nav a {
   background: #ffffff;
-  padding: 8px 10px;
+  padding: 12px 14px;
   border: 2px solid #222;
   text-decoration: none;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
-  font-size: 1.1rem;
+  font-size: 2.2rem;
 }
 
 /* =========================
