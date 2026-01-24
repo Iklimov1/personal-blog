@@ -103,52 +103,92 @@ body::before {
 }
 
 .sticker {
-  position: fixed;
+  position: absolute;
   width: 180px;
   opacity: 0.95;
   filter: drop-shadow(4px 6px 0 rgba(0, 0, 0, 0.2));
 }
 
-/* Corner bracket stickers - L-shaped corners */
-/* LEFT SIDE - bottom left corner */
+/* Stickers spread evenly across the background */
+/* Left column */
 .sticker.s1 {
-  top: 62%;
-  left: 8%;
+  top: 12%;
+  left: 5%;
   transform: rotate(-8deg);
 }
 
-/* BOTTOM SIDE - bottom left corner */
 .sticker.s2 {
-  top: 68%;
-  left: 22%;
-  transform: rotate(10deg);
+  top: 30%;
+  left: 8%;
+  transform: rotate(12deg);
 }
 
-/* RIGHT SIDE - bottom right corner */
 .sticker.s3 {
-  top: 62%;
-  right: 8%;
-  transform: rotate(8deg);
-}
-
-/* BOTTOM SIDE - bottom right corner */
-.sticker.s4 {
-  top: 68%;
-  right: 22%;
+  top: 48%;
+  left: 4%;
   transform: rotate(-10deg);
 }
 
-/* Extra accents if needed */
-.sticker.s5 {
-  top: 50%;
-  left: 10%;
-  transform: rotate(-12deg);
+.sticker.s4 {
+  top: 66%;
+  left: 7%;
+  transform: rotate(6deg);
 }
 
+.sticker.s5 {
+  top: 84%;
+  left: 5%;
+  transform: rotate(-14deg);
+}
+
+/* Right column */
 .sticker.s6 {
-  top: 50%;
-  right: 10%;
-  transform: rotate(12deg);
+  top: 18%;
+  right: 6%;
+  transform: rotate(10deg);
+}
+
+.sticker.s7 {
+  top: 36%;
+  right: 9%;
+  transform: rotate(-7deg);
+}
+
+.sticker.s8 {
+  top: 54%;
+  right: 5%;
+  transform: rotate(13deg);
+}
+
+.sticker.s9 {
+  top: 72%;
+  right: 8%;
+  transform: rotate(-9deg);
+}
+
+/* Center column - between title and board */
+.sticker.s11 {
+  top: 24%;
+  left: 50%;
+  transform: translateX(-50%) rotate(5deg);
+}
+
+.sticker.s12 {
+  top: 42%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-11deg);
+}
+
+.sticker.s13 {
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%) rotate(8deg);
+}
+
+.sticker.s14 {
+  top: 78%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-6deg);
 }
 
 /* faux tape */
