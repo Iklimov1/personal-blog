@@ -96,10 +96,11 @@ body::before {
    ========================= */
 
 .sticker-wall {
-  position: fixed;
+  position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
+  min-height: 100vh;
 }
 
 .sticker {
@@ -107,88 +108,130 @@ body::before {
   width: 180px;
   opacity: 0.95;
   filter: drop-shadow(4px 6px 0 rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+  animation: subtle-jiggle 3s ease-in-out infinite;
 }
 
-/* Stickers spread evenly across the background */
-/* Left column */
+/* Stagger the animations for different stickers */
+.sticker:nth-child(2) { animation-delay: 0.3s; }
+.sticker:nth-child(3) { animation-delay: 0.6s; }
+.sticker:nth-child(4) { animation-delay: 0.9s; }
+.sticker:nth-child(5) { animation-delay: 1.2s; }
+.sticker:nth-child(6) { animation-delay: 1.5s; }
+.sticker:nth-child(7) { animation-delay: 1.8s; }
+.sticker:nth-child(8) { animation-delay: 2.1s; }
+.sticker:nth-child(9) { animation-delay: 2.4s; }
+.sticker:nth-child(10) { animation-delay: 2.7s; }
+
+/* Subtle iPhone-like jiggle animation */
+@keyframes subtle-jiggle {
+  0%, 100% {
+    transform: rotate(var(--base-rotation, 0deg));
+  }
+  25% {
+    transform: rotate(calc(var(--base-rotation, 0deg) + 1deg)) translateY(-1px);
+  }
+  75% {
+    transform: rotate(calc(var(--base-rotation, 0deg) - 1deg)) translateY(1px);
+  }
+}
+
+/* Stickers in checkerboard pattern - avoiding text/board */
+/* Top row - left and right */
 .sticker.s1 {
-  top: 12%;
+  top: 8%;
   left: 5%;
-  transform: rotate(-8deg);
-}
-
-.sticker.s2 {
-  top: 30%;
-  left: 8%;
-  transform: rotate(12deg);
-}
-
-.sticker.s3 {
-  top: 48%;
-  left: 4%;
+  --base-rotation: -10deg;
   transform: rotate(-10deg);
 }
 
-.sticker.s4 {
-  top: 66%;
-  left: 7%;
-  transform: rotate(6deg);
-}
-
-.sticker.s5 {
-  top: 84%;
-  left: 5%;
-  transform: rotate(-14deg);
-}
-
-/* Right column */
 .sticker.s6 {
-  top: 18%;
-  right: 6%;
-  transform: rotate(10deg);
+  top: 8%;
+  right: 5%;
+  --base-rotation: 12deg;
+  transform: rotate(12deg);
 }
 
-.sticker.s7 {
-  top: 36%;
-  right: 9%;
+/* Second row - left, center-left, center-right, right */
+.sticker.s2 {
+  top: 22%;
+  left: 15%;
+  --base-rotation: 8deg;
+  transform: rotate(8deg);
+}
+
+.sticker.s11 {
+  top: 22%;
+  left: 65%;
+  --base-rotation: -7deg;
   transform: rotate(-7deg);
 }
 
-.sticker.s8 {
-  top: 54%;
-  right: 5%;
-  transform: rotate(13deg);
+/* Third row - far left and far right (around board level) */
+.sticker.s3 {
+  top: 40%;
+  left: 3%;
+  --base-rotation: -12deg;
+  transform: rotate(-12deg);
 }
 
-.sticker.s9 {
-  top: 72%;
-  right: 8%;
+.sticker.s7 {
+  top: 40%;
+  right: 3%;
+  --base-rotation: 9deg;
+  transform: rotate(9deg);
+}
+
+/* Fourth row - checkerboard */
+.sticker.s12 {
+  top: 55%;
+  left: 20%;
+  --base-rotation: -9deg;
   transform: rotate(-9deg);
 }
 
-/* Center column - between title and board */
-.sticker.s11 {
-  top: 24%;
-  left: 50%;
-  transform: translateX(-50%) rotate(5deg);
+.sticker.s8 {
+  top: 55%;
+  right: 20%;
+  --base-rotation: 11deg;
+  transform: rotate(11deg);
 }
 
-.sticker.s12 {
-  top: 42%;
-  left: 50%;
-  transform: translateX(-50%) rotate(-11deg);
+/* Fifth row - left and right */
+.sticker.s4 {
+  top: 70%;
+  left: 8%;
+  --base-rotation: 6deg;
+  transform: rotate(6deg);
+}
+
+.sticker.s9 {
+  top: 70%;
+  right: 8%;
+  --base-rotation: -8deg;
+  transform: rotate(-8deg);
+}
+
+/* Bottom row - spread out */
+.sticker.s5 {
+  top: 85%;
+  left: 25%;
+  --base-rotation: -14deg;
+  transform: rotate(-14deg);
 }
 
 .sticker.s13 {
-  top: 60%;
+  top: 85%;
   left: 50%;
-  transform: translateX(-50%) rotate(8deg);
+  --base-rotation: 10deg;
+  transform: translateX(-50%) rotate(10deg);
 }
 
 .sticker.s14 {
-  top: 78%;
-  left: 50%;
-  transform: translateX(-50%) rotate(-6deg);
+  top: 85%;
+  right: 25%;
+  --base-rotation: -7deg;
+  transform: rotate(-7deg);
 }
 
 /* faux tape */
