@@ -206,6 +206,35 @@ h1 {
     0 0 40px rgba(45, 185, 251, 0.6),
     0 0 80px rgba(45, 185, 251, 0.4),
     0 0 120px rgba(45, 185, 251, 0.2);
+  position: relative;
+}
+
+/* Add crayon/pencil texture overlay */
+.site-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.02) 2px,
+      rgba(0, 0, 0, 0.02) 4px
+    );
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
 }
 /* =========================
    PIXEL GLOBE
@@ -228,12 +257,11 @@ h1 {
   z-index: -1;
   opacity: 0.35;
   pointer-events: none;
-  animation: spin-globe 24s linear infinite;
   filter: contrast(1.1) saturate(1.2)
     drop-shadow(6px 6px 0 rgba(77, 165, 243, 0.25));
+  animation: spin-globe 20s linear infinite;
 }
 
-/* slow cozy rotation */
 @keyframes spin-globe {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -255,6 +283,8 @@ h1 {
   align-items: center;
   gap: 20px;
   flex-grow: 1;
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 /* =========================
@@ -262,7 +292,7 @@ h1 {
    ========================= */
 
 .pin {
-  position: static;
+  position: relative;
   background: #ffffff;
   padding: 22px 32px;
   border: 3px solid #222;

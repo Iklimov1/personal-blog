@@ -9,31 +9,34 @@
       href="{{ '/assets/css/style.css' | relative_url }}"
     />
   </head>
-  <div class="title-wrap">
-  <img
-    src="{{ '/assets/stickers/earth-spin.gif' | relative_url }}"
-    alt=""
-    class="pixel-globe"
-    aria-hidden="true"
-  />
-  <h1 class="site-title">Inna World of My Own</h1>
-</div>
+  <body>
+    <div class="home">
+      <div class="title-wrap">
+        <img
+          src="{{ '/assets/stickers/earth-spin.gif' | relative_url }}"
+          alt=""
+          class="pixel-globe"
+          aria-hidden="true"
+        />
+        <h1 class="site-title">Inna World of My Own</h1>
+      </div>
 
-    <div class="board">
-      <a class="pin pin-journal" href="{{ '/journal' | relative_url }}"
-        >📓 journal</a
-      >
-      <a class="pin pin-recipes" href="{{ '/recipes' | relative_url }}"
-        >🍰 recipes</a
-      >
-      <a class="pin pin-gallery" href="{{ '/gallery' | relative_url }}"
-        >📸 gallery</a
-      >
-      <a class="pin pin-learnings" href="{{ '/learnings' | relative_url }}"
-        >🧠 learnings</a
-      >
+      <div class="board">
+        <a class="pin pin-journal" href="{{ '/journal' | relative_url }}"
+          >📓 journal</a
+        >
+        <a class="pin pin-recipes" href="{{ '/recipes' | relative_url }}"
+          >🍰 recipes</a
+        >
+        <a class="pin pin-gallery" href="{{ '/gallery' | relative_url }}"
+          >📸 gallery</a
+        >
+        <a class="pin pin-learnings" href="{{ '/learnings' | relative_url }}"
+          >🧠 learnings</a
+        >
+      </div>
+
+      <p class="whisper">Join me in exploring my mind...</p>
     </div>
-
-    <p class="whisper">Join me in exploring my mind...</p>
   </body>
 </html>
