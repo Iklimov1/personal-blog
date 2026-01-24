@@ -211,10 +211,6 @@ h1 {
    PIXEL GLOBE
    ========================= */
 
-/* =========================
-   PIXEL GLOBE
-   ========================= */
-
 .title-wrap {
   position: relative;
   display: inline-block;
@@ -235,6 +231,21 @@ h1 {
   filter: contrast(1.1) saturate(1.2)
     drop-shadow(6px 6px 0 rgba(77, 165, 243, 0.25));
 }
+
+.board {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+}
+
 /* =========================
    HOME PINS
    ========================= */
