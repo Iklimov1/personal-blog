@@ -211,26 +211,30 @@ h1 {
    PIXEL GLOBE
    ========================= */
 
+/* =========================
+   PIXEL GLOBE
+   ========================= */
+
 .title-wrap {
   position: relative;
   display: inline-block;
-  margin-bottom: 60px;
+  margin: 0 auto 60px;
 }
 
-.board {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-grow: 1;
+/* the globe itself */
+.pixel-globe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 280px;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.35;
+  pointer-events: none;
+  filter: contrast(1.1) saturate(1.2)
+    drop-shadow(6px 6px 0 rgba(77, 165, 243, 0.25));
 }
-
 /* =========================
    HOME PINS
    ========================= */
