@@ -211,11 +211,12 @@ h1 {
    PIXEL GLOBE
    ========================= */
 
-/* .title-wrap {
+.title-wrap {
   position: relative;
   display: inline-block;
   margin-bottom: 60px;
-} */
+}
+*/
 
 /* .board {
   position: relative;
@@ -229,7 +230,7 @@ h1 {
   align-items: center;
   gap: 20px;
   flex-grow: 1;
-} */
+}
 
 /* =========================
    HOME PINS
