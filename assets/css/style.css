@@ -103,35 +103,52 @@ body::before {
 }
 
 .sticker {
-  position: absolute;
+  position: fixed;
   width: 180px;
   opacity: 0.95;
   filter: drop-shadow(4px 6px 0 rgba(0, 0, 0, 0.2));
 }
 
-/* Scrapbook stickers at 45° angles from board corners */
+/* Corner bracket stickers - L-shaped corners */
+/* LEFT SIDE - bottom left corner */
 .sticker.s1 {
-  top: 28%;
+  top: 62%;
   left: 8%;
-  transform: rotate(-12deg);
+  transform: rotate(-8deg);
 }
 
+/* BOTTOM SIDE - bottom left corner */
 .sticker.s2 {
-  bottom: 20%;
-  left: 8%;
-  transform: rotate(8deg);
-}
-
-.sticker.s3 {
-  top: 28%;
-  right: 8%;
+  top: 68%;
+  left: 22%;
   transform: rotate(10deg);
 }
 
-.sticker.s4 {
-  bottom: 20%;
+/* RIGHT SIDE - bottom right corner */
+.sticker.s3 {
+  top: 62%;
   right: 8%;
-  transform: rotate(-15deg);
+  transform: rotate(8deg);
+}
+
+/* BOTTOM SIDE - bottom right corner */
+.sticker.s4 {
+  top: 68%;
+  right: 22%;
+  transform: rotate(-10deg);
+}
+
+/* Extra accents if needed */
+.sticker.s5 {
+  top: 50%;
+  left: 10%;
+  transform: rotate(-12deg);
+}
+
+.sticker.s6 {
+  top: 50%;
+  right: 10%;
+  transform: rotate(12deg);
 }
 
 /* faux tape */
@@ -268,7 +285,7 @@ h1 {
   height: 500px;
   transform: translate(-50%, -50%);
   z-index: -1;
-  opacity: 0.35;
+  opacity: 0.55;
   pointer-events: none;
   filter: contrast(1.1) saturate(1.2)
     drop-shadow(6px 6px 0 rgba(77, 165, 243, 0.25));
