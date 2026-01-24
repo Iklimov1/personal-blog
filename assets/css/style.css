@@ -81,12 +81,12 @@ body::before {
     ),
     /* Paper grain texture */
     repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 1px,
-      rgba(0, 0, 0, 0.01) 1px,
-      rgba(0, 0, 0, 0.01) 2px
-    );
+        90deg,
+        transparent,
+        transparent 1px,
+        rgba(0, 0, 0, 0.01) 1px,
+        rgba(0, 0, 0, 0.01) 2px
+      );
   mix-blend-mode: overlay;
   opacity: 0.6;
 }
@@ -423,6 +423,15 @@ h1 {
    ========================= */
 
 @media (max-width: 768px) {
+  .pixel-globe {
+    width: 180px;
+    height: 180px;
+    opacity: 0.25;
+  }
+
+  .title-wrap {
+    margin-bottom: 40px;
+  }
   .sticker {
     display: none;
   }
@@ -492,7 +501,7 @@ h1 {
   }
 
   .whisper {
-    margin-top: 0;
+    margin-top: 30px;
     font-size: 0.9rem;
     flex-shrink: 0;
   }
@@ -508,16 +517,5 @@ h1 {
   .scrap-nav a {
     width: auto;
     padding: 10px 12px;
-  }
-  @media (max-width: 768px) {
-    .pixel-globe {
-      width: 180px;
-      height: 180px;
-      opacity: 0.25;
-    }
-
-    .title-wrap {
-      margin-bottom: 40px;
-    }
   }
 }
