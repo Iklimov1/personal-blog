@@ -628,63 +628,89 @@ h1 {
   .title-wrap {
     margin-bottom: 40px;
   }
-  
-  /* Mini stickers for mobile - framing title and above board */
+
+  /* Mini stickers for mobile - 14 total */
   .sticker {
     display: block;
     width: 60px;
     opacity: 0.85;
   }
-  
-  /* Around the title */
+
+  /* Top 4 stickers - spaced out between 2-5% */
   .sticker.s1 {
-    top: 5%;
-    left: 2%;
-  }
-  
-  .sticker.s2 {
-    top: 8%;
-    right: 5%;
-  }
-  
-  .sticker.s3 {
-    top: 15%;
-    left: 8%;
-  }
-  
-  .sticker.s4 {
-    top: 18%;
-    right: 2%;
-  }
-  
-  /* Above the board */
-  .sticker.s5 {
-    top: 32%;
+    top: 2%;
     left: 5%;
   }
-  
+
+  .sticker.s2 {
+    top: 3%;
+    left: 35%;
+  }
+
+  .sticker.s3 {
+    top: 4%;
+    right: 35%;
+  }
+
+  .sticker.s4 {
+    top: 2.5%;
+    right: 5%;
+  }
+
+  /* Left side - 3 stickers (avoiding title) */
+  .sticker.s5 {
+    top: 12%;
+    left: 2%;
+  }
+
   .sticker.s6 {
-    top: 35%;
-    right: 8%;
+    top: 20%;
+    left: 5%;
   }
-  
+
   .sticker.s7 {
-    top: 38%;
-    left: 15%;
+    top: 28%;
+    left: 3%;
   }
-  
+
+  /* Right side - 3 stickers (avoiding title) */
   .sticker.s8 {
-    top: 40%;
-    right: 12%;
+    top: 12%;
+    right: 2%;
   }
-  
-  /* Hide some stickers on mobile for cleaner look */
-  .sticker.s9,
-  .sticker.s11,
-  .sticker.s12,
-  .sticker.s13,
+
+  .sticker.s9 {
+    top: 20%;
+    right: 5%;
+  }
+
+  .sticker.s11 {
+    top: 28%;
+    right: 3%;
+  }
+
+  /* Under title but above board - 4 stickers spread out */
+  .sticker.s12 {
+    width: 50px;
+    top: 35%;
+    left: 10%;
+  }
+
+  .sticker.s13 {
+    top: 37%;
+    left: 40%;
+  }
+
   .sticker.s14 {
-    display: none;
+    top: 36%;
+    right: 40%;
+  }
+
+  /* Adding s10 as 14th sticker */
+  .sticker.s10 {
+    width: 50px;
+    top: 38%;
+    right: 10%;
   }
 
   .page {
@@ -710,7 +736,7 @@ h1 {
     margin-bottom: 20px;
     margin-top: 60px;
     text-shadow:
-      0.4rem 0.1rem 0.2rem #ff4fa1,
+      0.2rem 0.1rem 0.1rem #ff4fa1,
       -1px -1px 0 rgba(255, 255, 255, 0.2);
   }
 
