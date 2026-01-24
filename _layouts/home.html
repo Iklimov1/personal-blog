@@ -9,34 +9,45 @@
       href="{{ '/assets/css/style.css' | relative_url }}"
     />
   </head>
-  <div class="title-wrap">
-  <img
-    src="{{ '/assets/stickers/earth-spin.gif' | relative_url }}"
-    alt=""
-    class="pixel-globe"
-    aria-hidden="true"
-  />
-  <h1 class="site-title">
-    <div>INNA WORLD</div>
-    <div>OF MY OWN</div>
-  </h1>
-</div>
-
-    <div class="board">
-      <a class="pin pin-journal" href="{{ '/journal' | relative_url }}"
-        >📓 journal</a
-      >
-      <a class="pin pin-recipes" href="{{ '/recipes' | relative_url }}"
-        >🍰 recipes</a
-      >
-      <a class="pin pin-gallery" href="{{ '/gallery' | relative_url }}"
-        >📸 gallery</a
-      >
-      <a class="pin pin-learnings" href="{{ '/learnings' | relative_url }}"
-        >🧠 learnings</a
-      >
+  <body>
+    <!-- Background Stickers -->
+    <div class="sticker-wall">
+      <img src="{{ '/assets/stickers/s1.jpg' | relative_url }}" class="sticker s1" alt="" />
+      <img src="{{ '/assets/stickers/s2.jpg' | relative_url }}" class="sticker s2" alt="" />
+      <img src="{{ '/assets/stickers/s3.jpg' | relative_url }}" class="sticker s3" alt="" />
+      <img src="{{ '/assets/stickers/s4.jpg' | relative_url }}" class="sticker s4" alt="" />
     </div>
 
-    <p class="whisper">Join me in exploring my mind...</p>
+    <div class="home">
+      <div class="title-wrap">
+        <img
+          src="{{ '/assets/stickers/earth-spin.gif' | relative_url }}"
+          alt=""
+          class="pixel-globe"
+          aria-hidden="true"
+        />
+        <h1 class="site-title">
+          <div>INNA WORLD</div>
+          <div>OF MY OWN</div>
+        </h1>
+      </div>
+
+      <div class="board">
+        <a class="pin pin-journal" href="{{ '/journal' | relative_url }}"
+          >📓 journal</a
+        >
+        <a class="pin pin-recipes" href="{{ '/recipes' | relative_url }}"
+          >🍰 recipes</a
+        >
+        <a class="pin pin-gallery" href="{{ '/gallery' | relative_url }}"
+          >📸 gallery</a
+        >
+        <a class="pin pin-learnings" href="{{ '/learnings' | relative_url }}"
+          >🧠 learnings</a
+        >
+      </div>
+
+      <p class="whisper">Join me in exploring my mind...</p>
+    </div>
   </body>
 </html>

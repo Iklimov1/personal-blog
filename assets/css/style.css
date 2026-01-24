@@ -109,29 +109,29 @@ body::before {
   filter: drop-shadow(4px 6px 0 rgba(0, 0, 0, 0.2));
 }
 
-/* chaotic placements */
+/* Scrapbook stickers at 45° angles from board corners */
 .sticker.s1 {
-  top: 20%;
+  top: 28%;
   left: 8%;
-  transform: rotate(-6deg);
+  transform: rotate(-12deg);
 }
 
 .sticker.s2 {
-  top: 55%;
-  left: 18%;
-  transform: rotate(4deg);
+  bottom: 20%;
+  left: 8%;
+  transform: rotate(8deg);
 }
 
 .sticker.s3 {
-  top: 30%;
-  right: 14%;
-  transform: rotate(-3deg);
+  top: 28%;
+  right: 8%;
+  transform: rotate(10deg);
 }
 
 .sticker.s4 {
-  bottom: 14%;
-  right: 10%;
-  transform: rotate(6deg);
+  bottom: 20%;
+  right: 8%;
+  transform: rotate(-15deg);
 }
 
 /* faux tape */
@@ -251,6 +251,8 @@ h1 {
    ========================= */
 
 .title-wrap {
+  width: 100%;
+  text-align: center;
   margin: 11px;
   position: relative;
   display: inline-block;
@@ -456,7 +458,7 @@ h1 {
   }
 
   .site-title {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 20px;
     margin-top: 60px;
   }
