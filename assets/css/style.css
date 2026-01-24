@@ -50,6 +50,45 @@ body {
     80px 10px,
     10px 40px,
     70px 60px;
+  position: relative;
+}
+
+/* Paper/Crayon Texture Overlay for Entire Page */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+  background-image:
+    /* Cross-hatch pattern for hand-drawn feel */
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.04) 2px,
+      rgba(255, 255, 255, 0.04) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    ),
+    /* Paper grain texture */
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      rgba(0, 0, 0, 0.01) 1px,
+      rgba(0, 0, 0, 0.01) 2px
+    );
+  mix-blend-mode: overlay;
+  opacity: 0.6;
 }
 
 /* =========================
@@ -206,35 +245,6 @@ h1 {
     0 0 40px rgba(45, 185, 251, 0.6),
     0 0 80px rgba(45, 185, 251, 0.4),
     0 0 120px rgba(45, 185, 251, 0.2);
-  position: relative;
-}
-
-/* Add crayon/pencil texture overlay */
-.site-title::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 2px,
-      rgba(255, 255, 255, 0.03) 2px,
-      rgba(255, 255, 255, 0.03) 4px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.02) 2px,
-      rgba(0, 0, 0, 0.02) 4px
-    );
-  pointer-events: none;
-  z-index: 1;
-  mix-blend-mode: overlay;
 }
 /* =========================
    PIXEL GLOBE
@@ -251,24 +261,14 @@ h1 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 280px;
-  height: 280px;
+  width: 500px;
+  height: 500px;
   transform: translate(-50%, -50%);
   z-index: -1;
   opacity: 0.35;
   pointer-events: none;
   filter: contrast(1.1) saturate(1.2)
     drop-shadow(6px 6px 0 rgba(77, 165, 243, 0.25));
-  animation: spin-globe 20s linear infinite;
-}
-
-@keyframes spin-globe {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
 }
 
 .board {
@@ -284,7 +284,7 @@ h1 {
   gap: 20px;
   flex-grow: 1;
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 /* =========================
@@ -292,7 +292,7 @@ h1 {
    ========================= */
 
 .pin {
-  position: relative;
+  position: static;
   background: #ffffff;
   padding: 22px 32px;
   border: 3px solid #222;
