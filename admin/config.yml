@@ -2,6 +2,7 @@ backend:
   name: github
   repo: iklimov1/personal-blog
   branch: main
+  client_id: Ov23li2BwPyg98VoExHn
 
 media_folder: "../assets/images"
 public_folder: "../assets/images"
