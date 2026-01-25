@@ -3,6 +3,7 @@ backend:
   repo: iklimov1/personal-blog
   branch: main
   client_id: Ov23li2BwPyg98VoExHn
+  auth_type: implicit
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
