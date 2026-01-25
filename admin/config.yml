@@ -4,23 +4,36 @@ backend:
   branch: main
   client_id: Ov23li2BwPyg98VoExHn
 
-media_folder: "../assets/images"
-public_folder: "../assets/images"
+media_folder: "assets/images"
+public_folder: "/assets/images"
 
 collections:
-  - name: "journal"
-    label: "Journal"
-    folder: "_posts"
+  - name: journal
+    label: Journal
+    folder: _posts
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Vibe", name: "vibe", widget: "string" }
-      - {
-          label: "Issue Style",
-          name: "issue",
-          widget: "select",
-          options: ["diary", "zine", "newspaper"],
-        }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: Title
+        name: title
+        widget: string
+
+      - label: Date
+        name: date
+        widget: datetime
+
+      - label: Vibe
+        name: vibe
+        widget: string
+
+      - label: Issue Style
+        name: issue
+        widget: select
+        options:
+          - diary
+          - zine
+          - newspaper
+
+      - label: Body
+        name: body
+        widget: markdown
