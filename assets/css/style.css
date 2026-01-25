@@ -112,6 +112,23 @@ body::before {
   animation: subtle-jiggle 3s ease-in-out infinite;
 }
 
+/* Clickable sticker link */
+.sticker-link {
+  position: absolute;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.sticker-link:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(6px 8px 0 rgba(0, 0, 0, 0.3));
+}
+
+.sticker-link .sticker {
+  pointer-events: auto;
+}
+
 /* Stagger the animations for different stickers */
 .sticker:nth-child(2) {
   animation-delay: 0.3s;
