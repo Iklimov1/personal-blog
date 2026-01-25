@@ -112,21 +112,16 @@ body::before {
   animation: subtle-jiggle 3s ease-in-out infinite;
 }
 
-/* Clickable sticker link */
-.sticker-link {
-  position: absolute;
+/* Make any link wrapping a sticker clickable and hoverable */
+a > .sticker {
   pointer-events: auto;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.sticker-link:hover {
-  transform: scale(1.1);
+a:hover > .sticker {
+  transform: scale(1.08);
   filter: drop-shadow(6px 8px 0 rgba(0, 0, 0, 0.3));
-}
-
-.sticker-link .sticker {
-  pointer-events: auto;
 }
 
 /* Stagger the animations for different stickers */
