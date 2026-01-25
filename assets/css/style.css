@@ -490,7 +490,7 @@ h1 {
 .pin {
   position: static;
   background: #ffffff;
-  padding: 22px 32px;
+  padding: 18px 32px;
   border: 3px solid #222;
   box-shadow:
     8px 8px 0 rgba(0, 0, 0, 0.25),
@@ -707,7 +707,7 @@ h1 {
   }
 
   .page {
-    margin: 80px 16px 40px;
+    margin: 115px 16px 40px;
     padding: 40px 24px;
     transform: none;
   }
@@ -739,6 +739,7 @@ h1 {
     width: 100%;
     max-width: 100%;
     margin: 0;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
