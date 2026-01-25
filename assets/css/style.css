@@ -649,12 +649,12 @@ h1 {
 
   .sticker.s3 {
     top: 0%;
-    right: 55%;
+    left: 55%;
   }
 
   .sticker.s4 {
     top: 0%;
-    right: 84%;
+    left: 84%;
   }
 
   /* Left side - 3 stickers (avoiding title) */
@@ -703,7 +703,7 @@ h1 {
 
   .sticker.s14 {
     top: 29%;
-    right: 34%;
+    left: 34%;
   }
 
   .page {
