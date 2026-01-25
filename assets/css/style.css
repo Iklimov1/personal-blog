@@ -804,3 +804,179 @@ h1 {
     padding: 10px 12px;
   }
 }
+
+/* Clickable transparent hit areas for stickers (separate from visuals)
+   These sit above the .page so they can be clicked but won't visually
+   interfere with the sticker-wall which remains decorative.
+*/
+.sticker-hit {
+  position: absolute;
+  display: block;
+  width: 180px;
+  aspect-ratio: 1 / 1;
+  background: transparent;
+  border: 0;
+  z-index: 4; /* above .page (z-index:3) */
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+
+/* subtle scale on press and a light overlay ripple */
+.sticker-hit:active {
+  transform: scale(0.96);
+}
+
+.sticker-hit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  opacity: 0;
+  transform: scale(0.8);
+  transition:
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 220ms ease;
+  pointer-events: none;
+}
+
+/* class applied by JS on pointerdown for a brief ripple */
+.sticker-hit.tap::after,
+.sticker-hit.tap {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+/* keyboard focus outline for accessibility */
+.sticker-hit:focus {
+  outline: 3px solid rgba(77, 165, 243, 0.25);
+  outline-offset: 4px;
+}
+
+/* Desktop positions match the sticker visuals */
+.sticker-hit.s1 {
+  top: 8%;
+  left: 5%;
+}
+.sticker-hit.s2 {
+  top: 22%;
+  left: 15%;
+}
+.sticker-hit.s3 {
+  top: 40%;
+  left: 3%;
+}
+.sticker-hit.s4 {
+  top: 70%;
+  left: 8%;
+}
+.sticker-hit.s5 {
+  top: 0%;
+  left: 25%;
+}
+.sticker-hit.s6 {
+  top: 8%;
+  right: 0%;
+}
+.sticker-hit.s7 {
+  top: 0%;
+  right: 15%;
+}
+.sticker-hit.s8 {
+  top: 35%;
+  right: 5%;
+}
+.sticker-hit.s9 {
+  top: 70%;
+  right: 4%;
+}
+.sticker-hit.s11 {
+  top: 85%;
+  right: 20%;
+}
+.sticker-hit.s12 {
+  top: 55%;
+  left: 30%;
+  width: 125px;
+}
+.sticker-hit.s13 {
+  top: 85%;
+  left: 20%;
+}
+.sticker-hit.s14 {
+  top: 60%;
+  left: 70%;
+}
+
+/* Make hit areas slightly larger on hover for desktop/tap feedback */
+.sticker-hit:hover {
+  transform: scale(1.06);
+}
+
+/* MOBILE: match the mobile sticker layout so hit areas don't overlap the board */
+@media (max-width: 768px) {
+  .sticker-hit {
+    width: 60px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .sticker-hit.s1 {
+    top: 2%;
+    left: 5%;
+  }
+  .sticker-hit.s2 {
+    top: 0%;
+    left: 30%;
+  }
+  .sticker-hit.s3 {
+    top: 0%;
+    left: 55%;
+  }
+  .sticker-hit.s4 {
+    top: 0%;
+    left: 84%;
+  }
+
+  .sticker-hit.s5 {
+    top: 8%;
+    left: 78%;
+  }
+  .sticker-hit.s6 {
+    top: 27%;
+    left: 2%;
+  }
+  .sticker-hit.s7 {
+    top: 17%;
+    left: 2%;
+  }
+
+  .sticker-hit.s8 {
+    top: 17%;
+    right: 2%;
+  }
+  .sticker-hit.s9 {
+    top: 28%;
+    right: 25%;
+  }
+  .sticker-hit.s11 {
+    top: 28%;
+    right: 3%;
+  }
+
+  .sticker-hit.s12 {
+    top: 32%;
+    left: 20%;
+    width: 50px;
+  }
+  .sticker-hit.s13 {
+    top: 8%;
+    left: 12%;
+  }
+  .sticker-hit.s14 {
+    top: 29%;
+    left: 34%;
+  }
+}

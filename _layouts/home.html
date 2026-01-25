@@ -11,7 +11,7 @@
   </head>
   <body>
     <!-- Background Stickers -->
-    <div class="sticker-wall">
+    <div>
       <img
         src="{{ '/assets/stickers/s1.jpg' | relative_url }}"
         class="sticker s1"
@@ -112,5 +112,45 @@
 
       <p class="whisper">Join me in exploring my mind...</p>
     </div>
+
+    <!-- Clickable hit areas for stickers (transparent anchors) -->
+    <a
+      href="{{ '/video' | relative_url }}"
+      class="sticker-hit s4"
+      aria-label="Watch video"
+    ></a>
+    <a href="#" class="sticker-hit s1" aria-label="sticker 1"></a>
+    <a href="#" class="sticker-hit s2" aria-label="sticker 2"></a>
+    <a href="#" class="sticker-hit s3" aria-label="sticker 3"></a>
+    <a href="#" class="sticker-hit s5" aria-label="sticker 5"></a>
+    <a href="#" class="sticker-hit s6" aria-label="sticker 6"></a>
+    <a href="#" class="sticker-hit s7" aria-label="sticker 7"></a>
+    <a href="#" class="sticker-hit s8" aria-label="sticker 8"></a>
+    <a href="#" class="sticker-hit s9" aria-label="sticker 9"></a>
+    <a href="#" class="sticker-hit s11" aria-label="sticker 11"></a>
+    <a href="#" class="sticker-hit s12" aria-label="sticker 12"></a>
+    <a href="#" class="sticker-hit s13" aria-label="sticker 13"></a>
+    <a href="#" class="sticker-hit s14" aria-label="sticker 14"></a>
+
+    <script>
+      // Add tap feedback for sticker hit areas
+      (function () {
+        const hits = document.querySelectorAll(".sticker-hit");
+        hits.forEach((hit) => {
+          hit.addEventListener("pointerdown", (e) => {
+            hit.classList.add("tap");
+          });
+          ["pointerup", "pointercancel", "pointerleave"].forEach((ev) => {
+            hit.addEventListener(ev, () => {
+              hit.classList.remove("tap");
+            });
+          });
+          // remove class after short timeout to ensure visual feedback on quick taps
+          hit.addEventListener("click", () => {
+            setTimeout(() => hit.classList.remove("tap"), 200);
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
