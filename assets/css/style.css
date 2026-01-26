@@ -1083,30 +1083,34 @@ h1 {
 /* bonus clicks */
 .tv-frame {
   position: relative;
-  width: 640px; /* overall TV size */
+  width: 100%; /* fill parent (.page) width */
   max-width: 100%;
   aspect-ratio: 4 / 3; /* keeps TV proportions */
   background-image: url("../images/tv.png");
-  background-size: contain;
+  background-size: 100% 100%; /* make the tv.png scale exactly to the element */
   background-repeat: no-repeat;
   background-position: center;
   margin: 0 auto;
   background-color: transparent;
 }
 
-/* .video-container iframe {
-  z-index: 2; /* ensure iframe sits above decorative overlay, but background remains visible */
-
-.tv-frame .static-overlay {
-  z-index: 3;
-} /* if you want the static layer above iframe */
-
-/* the screen area */
+/* ensure iframe stacks above background and is smaller inside the TV */
+.video-container.tv-frame iframe,
 .tv-frame iframe {
   position: absolute;
-  top: 22%; /* adjust until it lines up with screen */
-  left: 18%;
-  width: 64%;
-  height: 48%;
+  z-index: 2; /* above decorative background */
+  border: none;
+  top: 28%; /* adjust until it lines up with screen and is slightly smaller */
+  left: 22.5%;
+  width: 55%;
+  height: 44%;
   border-radius: 6px; /* optional, for CRT softness */
+}
+
+/* optional static overlay above iframe */
+.tv-frame .static-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3; /* sits above iframe if present */
+  pointer-events: none;
 }
