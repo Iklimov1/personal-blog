@@ -17,7 +17,7 @@
       <a href="{{ '/gallery' | relative_url }}">📸</a>
     </nav>
 
-    <main class="page journal">
+    <main class="page journal {{ page.issue }}">
       <div class="meta">
         {{ page.date | date: "%B %d, %Y" }} · {{ page.vibe }}
       </div>

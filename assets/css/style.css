@@ -694,6 +694,10 @@ h1 {
     top: 28%;
     right: 25%;
   }
+  .sticker.s10 {
+    top: 80%;
+    right: 50%;
+  }
 
   .sticker.s11 {
     top: 28%;
@@ -893,6 +897,10 @@ h1 {
   top: 70%;
   right: 4%;
 }
+.sticker-hit.s10 {
+  top: 0%;
+  left: 55%;
+}
 .sticker-hit.s11 {
   top: 85%;
   right: 20%;
@@ -961,6 +969,10 @@ h1 {
     top: 28%;
     right: 25%;
   }
+  .sticker-hit.s10 {
+    top: 0%;
+    left: 55%;
+  }
   .sticker-hit.s11 {
     top: 28%;
     right: 3%;
@@ -979,4 +991,60 @@ h1 {
     top: 29%;
     left: 34%;
   }
+}
+
+/* Blog post elements */
+.pull-quote {
+  font-family: "Handwritten", cursive;
+  font-size: 1.2rem;
+  background: #fffbe8;
+  border: 2px dashed #222;
+  padding: 16px 20px;
+  margin: 40px auto;
+  max-width: 70%;
+  transform: rotate(-1.5deg);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.scrap-block {
+  border: 2px solid #222;
+  padding: 24px;
+  margin: 48px 0;
+  background: #ffffff;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
+  transform: rotate(0.8deg);
+}
+
+.scrap-block.alt {
+  transform: rotate(-0.8deg);
+  background: #fff0f7;
+}
+.fig {
+  text-align: center;
+  font-family: "Handwritten", cursive;
+  font-size: 0.85rem;
+  color: #ff4fa1;
+}
+.page.diary {
+  background: repeating-linear-gradient(#fffdf8, #fffdf8 28px, #ffd6e8 29px);
+}
+
+.page.zine {
+  background: #fff;
+  border-style: dashed;
+}
+
+.page.newspaper {
+  background: #fdfdfd;
+  font-family: "Times New Roman", serif;
+}
+
+.content > *:nth-child(odd) {
+  transform: rotate(0.2deg);
+}
+
+.content > *:nth-child(even) {
+  transform: rotate(-0.2deg);
+}
+.no-tilt {
+  transform: none !important;
 }
