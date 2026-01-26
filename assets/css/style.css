@@ -1063,7 +1063,23 @@ h1 {
   color: #333;
   margin: 2rem 0;
 }
+.frontpage {
+  height: 100vh;
+  margin: 40px 120px;
+  padding: 15px 40px;
+  transform: rotate(-0.6deg);
+  position: relative;
+  z-index: 3;
+}
 
+.frontpage.notebook-bg {
+  background-image: url("../images/notebook.png");
+  background-repeat: no-repeat;
+  background-position: center top; /* tweak X/Y to line up paper artwork */
+  background-size: cover; /* make background height fill the element */
+  min-height: 100vh; /* at least full viewport */
+  overflow: visible;
+}
 /* bonus clicks */
 .tv-frame {
   position: relative;
