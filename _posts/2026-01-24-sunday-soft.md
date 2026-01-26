@@ -1,22 +1,18 @@
 ---
 layout: piece
-title: "Sunday Softness"
+title: "Saturday Saturday"
 date: 2026-01-24
-vibe: quiet, reflective
+vibe: irratated
 section: journal
 issue: diary
-cover_image: /assets/images/snow.jpeg)
+cover_image: /assets/images/blog-design.png
 ---
 
-Today moved slower than I expected, but not in a bad way.
-I didn’t rush myself out of it.
+Today was a piece of work. I am actually writing this on sunday evening because I am currently testing the files to be uploaded and OH MAN! is it ever annoying to work with Jekyll and GitHub Pages (I hope github that you're reading this.) I have moved through the stages of grief into anger/acceptance that. I will need to sink time into the journal template like I spent time on the front page, which I love! I was inspired to create a blog when I realize dhow easy it is to pour one's thoughts into the internet. Also inspired by none other than Ezra koenigs internet vibes blog. I recently watched "Neo Yokio" as well so it's kind of been an Ezra Weekend in general (more to come on my review of Neo Yokio.)
 
-![morning light](/assets/images/snow.jpeg)
+![Blog Designs](/assets/images/blog-design.png)
 
-I kept thinking about how much of adulthood is unlearning urgency.
+Above are the many designs which inspired the blog's design. It has definitely gone through a metamorphosis during the past 3-4 days with a real sleeping beauty moment (pink! no blue!.) I had to settle on the obvious pink design to live out the days I only like green and blue as a child.
 
 <div class="pull-quote">
-You don’t have to optimize every moment for it to matter.
-</div>
-
-By the evening, everything felt softer.
+I don't care about other people with weird monitor sizes!! This isn't for them!</div>
