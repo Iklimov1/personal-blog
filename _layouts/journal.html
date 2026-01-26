@@ -8,21 +8,6 @@
       rel="stylesheet"
       href="{{ '/assets/css/style.css' | relative_url }}"
     />
-
-    <!-- Per-page CSS using Liquid for correct relative URL -->
-    <style>
-      .notebook-bg {
-        background-image: url('{{ "/assets/images/notebook.png" | relative_url }}');
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
-      }
-
-      /* Ensure the notepad area stays readable on top of the background */
-      .notebook-bg .notepad {
-        background: rgba(246, 246, 246, 0.9);
-      }
-    </style>
   </head>
   <body>
     <nav class="scrap-nav">
@@ -32,8 +17,11 @@
       <a href="{{ '/gallery' | relative_url }}">📸</a>
     </nav>
 
-    <!-- Use notebook image via CSS class instead of inline style -->
-    <main class="page journal notebook-bg">
+    <!-- Use notebook image as the background for the journal page -->
+    <main
+      class="page journal"
+      style="background-image: url('{{ '/assets/images/notebook.png' | relative_url }}'); background-size: cover; background-position: center top; background-repeat: no-repeat;"
+    >
       <div class="notepad">
         <h1>{{ page.title }}</h1>
 
@@ -50,22 +38,6 @@
             {% endif %} {% endfor %}
           </ul>
         </nav>
-
-        <!-- Full entries rendered in order -->
-        <div class="entries">
-          {% for post in site.posts %} {% if post.section == "journal" %}
-          <article
-            id="post-{{ post.url | slugify }}"
-            class="entry {{ post.issue }}"
-          >
-            <div class="entry-meta">
-              {{ post.date | date: "%B %d, %Y" }} · {{ post.vibe }}
-            </div>
-            <h3 class="entry-title">{{ post.title }}</h3>
-            <div class="entry-content">{{ post.content }}</div>
-          </article>
-          {% endif %} {% endfor %}
-        </div>
       </div>
     </main>
   </body>
