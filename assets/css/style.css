@@ -1072,7 +1072,7 @@ h1 {
   z-index: 3;
 }
 
-.frontpage.notebook-bg {
+.notebook-bg {
   background-image: url("../images/notebook.png");
   background-repeat: no-repeat;
   background-position: center top; /* tweak X/Y to line up paper artwork */
