@@ -1082,41 +1082,37 @@ h1 {
 }
 /* bonus clicks */
 .tv-frame {
-  position: relative;
+  position: relative; /* required for absolute children and pseudo-element */
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
   aspect-ratio: 4 / 3;
-  /* remove background-image here — we'll render it above the iframe with a pseudo-element */
-  background: transparent;
-  padding: 0; /* remove padding so the frame overlay controls visual inset */
+  padding: 0; /* remove padding so overlay aligns exactly */
   box-sizing: border-box;
-  overflow: visible;
 }
 
-/* TV frame artwork sits above the video using a pseudo-element */
+/* Put the TV artwork in a pseudo-element above the iframe so the video appears "inside" the screen */
 .tv-frame::after {
   content: "";
   position: absolute;
   inset: 0;
   background-image: url("../images/tv.png");
-  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  pointer-events: none; /* allow clicks to reach the iframe */
-  z-index: 3; /* sits above the iframe */
+  background-size: contain;
+  z-index: 3; /* sits above the video */
+  pointer-events: none; /* clicks pass through to the iframe */
 }
 
-/* place the iframe behind the frame artwork and size it to the transparent screen area */
+/* Position the video underneath the TV overlay and inset it to fit the screen area */
 .tv-frame iframe {
   position: absolute;
-  z-index: 1; /* below the frame pseudo-element */
+  z-index: 2; /* below the ::after overlay */
   border: none;
-  /* tweak these to line up the video inside the TV screen */
-  top: 28%;
-  left: 22.5%;
-  width: 55%;
-  height: 44%;
-  border-radius: 6px; /* optional */
-  overflow: hidden;
+  top: 28%; /* tweak these values to align with the transparent screen of tv.png */
+  left: 18%;
+  width: 64%;
+  height: 48%;
+  display: block;
+  border-radius: 6px;
 }
