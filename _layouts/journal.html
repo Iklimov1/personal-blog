@@ -18,27 +18,22 @@
     </nav>
 
     <!-- Use notebook image as the background for the journal page -->
-    <main
-      class="page journal"
-      style="background-image: url('{{ '/assets/images/notebook.png' | relative_url }}'); background-size: cover; background-position: center top; background-repeat: no-repeat;"
-    >
-      <div class="notepad">
-        <h1>{{ page.title }}</h1>
+    <main class="frontpage journal notebook-bg">
+      <h1>{{ page.title }}</h1>
 
-        <!-- Table of contents: links to each journal post shown below -->
-        <nav class="toc">
-          <h2>Contents</h2>
-          <ul class="toc-list">
-            {% for post in site.posts %} {% if post.section == "journal" %}
-            <li>
-              <a href="{{ post.url | relative_url }}"
-                >{{ post.date | date: "%b %d" }} — {{ post.title }}</a
-              >
-            </li>
-            {% endif %} {% endfor %}
-          </ul>
-        </nav>
-      </div>
+      <!-- Table of contents: links to each journal post shown below -->
+      <nav class="toc">
+        <h2>Contents</h2>
+        <ul class="toc-list">
+          {% for post in site.posts %} {% if post.section == "journal" %}
+          <li>
+            <a href="{{ post.url | relative_url }}"
+              >{{ post.date | date: "%b %d" }} — {{ post.title }}</a
+            >
+          </li>
+          {% endif %} {% endfor %}
+        </ul>
+      </nav>
     </main>
   </body>
 </html>
