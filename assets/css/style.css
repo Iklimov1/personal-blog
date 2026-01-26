@@ -292,7 +292,7 @@ a:hover > .sticker {
 .page {
   margin: 40px 120px;
   background: #fffdf7;
-  padding: 10px 40px;
+  padding: 15px 40px;
   border: 3px solid #222;
   box-shadow:
     20px 20px 0 #ff8ccf,
@@ -1052,53 +1052,6 @@ h1 {
 }
 .no-tilt {
   transform: none !important;
-}
-
-/* Notepad-style journal background (converted from SCSS/Compass) */
-.notepad {
-  --linespace: 30px;
-  position: relative;
-  width: 80%;
-  padding: 30px;
-  margin: 100px auto;
-  text-align: center;
-  background-color: #f6f6f6;
-  min-height: 800px;
-  /* two-layer background: soft top gradient + repeating ruled lines */
-  background-image:
-    linear-gradient(to bottom, rgba(246, 246, 246, 0) 0%, #fcfcfc 100%),
-    linear-gradient(
-      to bottom,
-      #f6f6f6 0px,
-      #f6f6f6 calc(var(--linespace) - 1px),
-      #eaeaea calc(var(--linespace) - 1px),
-      #eaeaea var(--linespace)
-    );
-  background-size:
-    100% 100%,
-    100% calc(var(--linespace) + 1px);
-  background-repeat: no-repeat, repeat-y;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-}
-
-.notepad:before {
-  content: "";
-  height: 47px;
-  width: 100%;
-  position: absolute;
-  top: -47px;
-  left: 0;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2065/paper_1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  box-shadow: 0 10px 4px rgba(0, 0, 0, 0.2);
-  z-index: -1;
-}
-
-.notepad h3 {
-  font-size: 2em;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #323232;
 }
 
 /* Journal CSS */

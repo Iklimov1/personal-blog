@@ -1,10 +1,11 @@
----
+----
 layout: journal
 title: "Recipe Title"
 date: 2026-01-25 12:00:00
 vibe: delicious
 section: recipe
 tags: [baking, dessert]
+
 ---
 
 Ingredients:
