@@ -1,6 +1,6 @@
 ---
 layout: gallery
-title: gallery
+title: On Film, Sort Of
 ---
 
 <div class="polaroids">
