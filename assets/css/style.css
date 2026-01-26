@@ -1080,37 +1080,110 @@ h1 {
   min-height: 100vh; /* at least full viewport */
   overflow: visible;
 }
-/* bonus clicks */
+/* --- TV Frame & Video Setup --- */
 .tv-frame {
   position: relative;
-  width: 100%; /* fill parent (.page) width */
-  max-width: 100%;
-  aspect-ratio: 4 / 3; /* keeps TV proportions */
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 4 / 3;
   background-image: url("../images/tv.png");
-  background-size: 100% 100%; /* make the tv.png scale exactly to the element */
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 auto;
-  background-color: transparent;
 }
 
-/* ensure iframe stacks above background and is smaller inside the TV */
-.video-container.tv-frame iframe,
-.tv-frame iframe {
+.tv-screen {
   position: absolute;
-  z-index: 2; /* above decorative background */
-  border: none;
-  top: 28%; /* adjust until it lines up with screen and is slightly smaller */
-  left: 22.5%;
-  width: 55%;
-  height: 44%;
-  border-radius: 6px; /* optional, for CRT softness */
+  top: 26%; /* adjust for your TV image */
+  left: 20%; /* adjust for your TV image */
+  width: 60%;
+  height: 46%;
+  padding: 20px; /* space inside TV frame */
+  box-sizing: border-box;
+  background: black;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
-/* optional static overlay above iframe */
-.tv-frame .static-overlay {
+.tv-screen iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* optional static overlay effect */
+.static-overlay {
   position: absolute;
   inset: 0;
-  z-index: 3; /* sits above iframe if present */
+  z-index: 2;
   pointer-events: none;
+  opacity: 0.15;
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      rgba(0, 0, 0, 0.05) 1px,
+      rgba(0, 0, 0, 0.05) 2px
+    );
+  mix-blend-mode: overlay;
+  animation: static-flicker 0.2s infinite;
+}
+
+@keyframes static-flicker {
+  0% {
+    opacity: 0.12;
+  }
+  50% {
+    opacity: 0.18;
+  }
+  100% {
+    opacity: 0.15;
+  }
+}
+
+/* Optional: scanline effect */
+.static-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* --- Optional page styling --- */
+body {
+  font-family: "Pixel", sans-serif;
+  background: #111;
+  color: #ff4fa1;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h1 {
+  margin-bottom: 30px;
 }
