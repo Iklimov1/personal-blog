@@ -1,9 +1,11 @@
 ---
+layout: piece
 title: "Sunday Softness"
 date: 2026-01-24
 vibe: quiet, reflective
-section: LIFE
+section: journal
 issue: diary
+cover_image: /assets/images/snow.jpeg)
 ---
 
 Today moved slower than I expected, but not in a bad way.

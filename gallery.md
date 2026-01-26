@@ -1,6 +1,17 @@
 ---
-layout: gallery-index
+layout: gallery
 title: gallery
 ---
 
-My photos and memories.
+<div class="polaroids">
+{% for post in site.posts %}
+  {% if post.cover_image %}
+    <figure>
+      <a href="{{ post.url | relative_url }}">
+        <img src="{{ post.cover_image | relative_url }}" alt="{{ post.title }}">
+      </a>
+      <figcaption>{{ post.date | date: "%b %d, %Y" }} — {{ post.title }}</figcaption>
+    </figure>
+  {% endif %}
+{% endfor %}
+</div>
