@@ -236,6 +236,13 @@ a:hover > .sticker {
   transform: rotate(-6deg);
 }
 
+.sticker.s10 {
+  top: 0%;
+  left: 55%;
+  --base-rotation: 4deg;
+  transform: translateX(-50%) rotate(4deg);
+}
+
 .sticker.s11 {
   top: 85%;
   right: 20%;
@@ -695,7 +702,7 @@ h1 {
     right: 25%;
   }
   .sticker.s10 {
-    top: 80%;
+    top: 30%;
     right: 50%;
   }
 
