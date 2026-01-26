@@ -15,12 +15,22 @@
 </nav>
 
 <main class="page gallery">
-  <h1>On Film, Sort Of</h1>
+  <h1>🎞️ On Film, Sort Of 🎞️</h1>
 
   <div class="polaroids">
     {% for post in site.posts %}
-      {% if post.content contains '<img' %}
-        {{ post.content | split: '<img' | shift | join: '<img' }}
+      {% assign img = post.cover_image %}
+      {% if img == nil or img == '' %}
+        {% capture tmp %}{{ post.content | split: '<img' | last }}{% endcapture %}
+        {% assign img = tmp | split: 'src="' | last | split: '"' | first %}
+      {% endif %}
+
+      {% if img and img != '' %}
+        <figure class="polaroid">
+          <a href="{{ post.url | relative_url }}">
+            <img src="{{ img | relative_url }}" alt="{{ post.title }}">
+          </a>
+        </figure>
       {% endif %}
     {% endfor %}
   </div>
