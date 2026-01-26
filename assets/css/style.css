@@ -675,7 +675,6 @@ h1 {
     left: 84%;
   }
 
-  /* Left side - 3 stickers (avoiding title) */
   .sticker.s5 {
     top: 8%;
     left: 78%;
@@ -691,7 +690,6 @@ h1 {
     left: 2%;
   }
 
-  /* Right side - 3 stickers (avoiding title) */
   .sticker.s8 {
     top: 17%;
     right: 2%;
@@ -702,8 +700,8 @@ h1 {
     right: 25%;
   }
   .sticker.s10 {
-    top: 30%;
-    right: 50%;
+    top: 35%;
+    right: 40%;
   }
 
   .sticker.s11 {
