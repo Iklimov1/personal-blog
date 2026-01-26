@@ -1063,3 +1063,24 @@ h1 {
   color: #333;
   margin: 2rem 0;
 }
+
+/* bonus clicks */
+.tv-frame {
+  position: relative;
+  width: 640px; /* overall TV size */
+  aspect-ratio: 4 / 3; /* keeps TV proportions */
+  background-image: url("/images/tv.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* the screen area */
+.tv-frame iframe {
+  position: absolute;
+  top: 22%; /* adjust until it lines up with screen */
+  left: 18%;
+  width: 64%;
+  height: 48%;
+  border-radius: 6px; /* optional, for CRT softness */
+}
