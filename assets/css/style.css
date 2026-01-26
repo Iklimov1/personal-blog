@@ -1084,7 +1084,7 @@ h1 {
 .tv-frame {
   position: relative; /* required for absolute children and pseudo-element */
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   aspect-ratio: 4 / 3;
   padding: 0; /* remove padding so overlay aligns exactly */
@@ -1109,10 +1109,10 @@ h1 {
   position: absolute;
   z-index: 2; /* below the ::after overlay */
   border: none;
-  top: 28%; /* tweak these values to align with the transparent screen of tv.png */
-  left: 18%;
-  width: 64%;
-  height: 48%;
+  top: 10%; /* tweak these values to align with the transparent screen of tv.png */
+  left: 22%;
+  width: 55%;
+  height: 60%;
   display: block;
   border-radius: 6px;
 }

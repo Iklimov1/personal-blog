@@ -1,17 +1,10 @@
 ---
-layout: piece
+layout: video
 ---
 
 <h1>HOA HOA HOA HOA HOA</h1>
 <div class="tv-frame">
-  <iframe
-    src="https://www.youtube.com/embed/zCf3p_sTmDA"
-    title="YouTube video player"
-    allowfullscreen
-  ></iframe>
-
-  <!-- optional decorative overlay element (CSS places it above iframe) -->
-  <div class="static-overlay" aria-hidden="true"></div>
+  <iframe src="/assets/videos/edward.mp4"></iframe>
 </div>
 
 <p
@@ -31,72 +24,5 @@ layout: piece
     color: #ff4fa1;
     text-align: center;
     margin-bottom: 30px;
-  }
-  /* Staticky VHS overlay effect */
-  .static-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.15;
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(255, 255, 255, 0.03) 2px,
-        rgba(255, 255, 255, 0.03) 4px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 1px,
-        rgba(0, 0, 0, 0.05) 1px,
-        rgba(0, 0, 0, 0.05) 2px
-      );
-    animation: static-flicker 0.2s infinite;
-    mix-blend-mode: overlay;
-  }
-
-  @keyframes static-flicker {
-    0% {
-      opacity: 0.12;
-    }
-    50% {
-      opacity: 0.18;
-    }
-    100% {
-      opacity: 0.15;
-    }
-  }
-
-  /* Scanline effect */
-  .static-overlay::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 1px,
-      transparent 3px
-    );
-    animation: scanline 8s linear infinite;
-  }
-
-  @keyframes scanline {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(100%);
-    }
   }
 </style>
