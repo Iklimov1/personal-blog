@@ -1082,23 +1082,41 @@ h1 {
 }
 /* bonus clicks */
 .tv-frame {
+  position: relative;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-
   aspect-ratio: 4 / 3;
-  background-image: url("../images/tv.png");
-  background-size: cover; /* scale TV image to fill */
-  background-repeat: no-repeat;
-  background-position: center;
-
-  padding: 20px; /* ensures video doesn’t touch edges of TV */
+  /* remove background-image here — we'll render it above the iframe with a pseudo-element */
+  background: transparent;
+  padding: 0; /* remove padding so the frame overlay controls visual inset */
   box-sizing: border-box;
+  overflow: visible;
 }
 
+/* TV frame artwork sits above the video using a pseudo-element */
+.tv-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/tv.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none; /* allow clicks to reach the iframe */
+  z-index: 3; /* sits above the iframe */
+}
+
+/* place the iframe behind the frame artwork and size it to the transparent screen area */
 .tv-frame iframe {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  z-index: 1; /* below the frame pseudo-element */
   border: none;
-  display: block;
+  /* tweak these to line up the video inside the TV screen */
+  top: 28%;
+  left: 22.5%;
+  width: 55%;
+  height: 44%;
+  border-radius: 6px; /* optional */
+  overflow: hidden;
 }
