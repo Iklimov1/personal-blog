@@ -2,9 +2,8 @@
 layout: piece
 title: "test2"
 date: 2026-01-22
-section: LIFE
+section: journal
 vibe: quiet · soft blue
-cover_image: /assets/images/morning.jpg
 ---
 
 The morning felt unhurried.
