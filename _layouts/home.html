@@ -173,30 +173,57 @@
         const audio = document.getElementById("s10-audio");
         if (!hit || !audio) return;
 
-        // prefer pointer events for touch + mouse
-        const playSound = () => {
+        // ensure hit area is focusable
+        if (!hit.hasAttribute('tabindex')) hit.setAttribute('tabindex', '0');
+
+        let clickTimer = null;
+        const clickDelay = 300; // ms to distinguish single vs double click
+
+        const doPlay = () => {
+          audio.play().catch(() => {});
+          hit.classList.add("playing");
+        };
+        const doPause = () => {
+          audio.pause();
+          hit.classList.remove("playing");
+        };
+        const doRestart = () => {
           audio.currentTime = 0;
-          audio.play().catch(() => {
-            /* gesture required / autoplay blocked — ignore */
-          });
+          audio.play().catch(() => {});
           hit.classList.add("playing");
         };
 
-        hit.addEventListener("pointerdown", (e) => {
-          e.preventDefault();
-          playSound();
-        });
-
-        // keyboard support (if element is focusable/button)
-        hit.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            playSound();
+        // Click handler: single click toggles play/pause, double-click restarts
+        hit.addEventListener("click", (e) => {
+          // if there's no pending timer, start one to handle single click
+          if (clickTimer === null) {
+            clickTimer = setTimeout(() => {
+              if (audio.paused) doPlay(); else doPause();
+              clickTimer = null;
+            }, clickDelay);
+          } else {
+            // second click within delay => double click action
+            clearTimeout(clickTimer);
+            clickTimer = null;
+            doRestart();
           }
         });
 
-        // cleanup UI when audio ends
-        audio.addEventListener("ended", () => hit.classList.remove("playing"));
+        // Keyboard support: Enter/Space toggle, 'r' to restart
+        hit.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            if (audio.paused) doPlay(); else doPause();
+          } else if (e.key.toLowerCase() === 'r') {
+            e.preventDefault();
+            doRestart();
+          }
+        });
+
+        // keep visual state in sync
+        audio.addEventListener('play', () => hit.classList.add('playing'));
+        audio.addEventListener('pause', () => hit.classList.remove('playing'));
+        audio.addEventListener('ended', () => hit.classList.remove('playing'));
       });
     </script>
   </body>
