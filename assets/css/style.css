@@ -861,7 +861,6 @@ h1 {
 
 /* keyboard focus outline for accessibility */
 .sticker-hit:focus {
-  outline: 3px solid rgba(77, 165, 243, 0.25);
   outline-offset: 4px;
 }
 

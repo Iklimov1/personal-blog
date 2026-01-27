@@ -59,11 +59,13 @@
         class="sticker s9"
         alt=""
       />
-      <img
-        src="{{ '/assets/stickers/s10.png' | relative_url }}"
-        class="sticker s10"
-        alt=""
-      />
+      <button class="sticker s10">
+        <img
+          src="{{ '/assets/stickers/s10.png' | relative_url }}"
+          class="sticker s10"
+          alt=""
+        />
+      </button>
       <img
         src="{{ '/assets/stickers/s11.png' | relative_url }}"
         class="sticker s11"
@@ -166,34 +168,36 @@
       })();
     </script>
     <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const hit = document.querySelector('.sticker-hit.s10');
-  const audio = document.getElementById('s10-audio');
-  if (!hit || !audio) return;
+      document.addEventListener("DOMContentLoaded", () => {
+        const hit = document.querySelector(".sticker-hit.s10");
+        const audio = document.getElementById("s10-audio");
+        if (!hit || !audio) return;
 
-  // prefer pointer events for touch + mouse
-  const playSound = () => {
-    audio.currentTime = 0;
-    audio.play().catch(() => { /* gesture required / autoplay blocked — ignore */ });
-    hit.classList.add('playing');
-  };
+        // prefer pointer events for touch + mouse
+        const playSound = () => {
+          audio.currentTime = 0;
+          audio.play().catch(() => {
+            /* gesture required / autoplay blocked — ignore */
+          });
+          hit.classList.add("playing");
+        };
 
-  hit.addEventListener('pointerdown', (e) => {
-    e.preventDefault();
-    playSound();
-  });
+        hit.addEventListener("pointerdown", (e) => {
+          e.preventDefault();
+          playSound();
+        });
 
-  // keyboard support (if element is focusable/button)
-  hit.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      playSound();
-    }
-  });
+        // keyboard support (if element is focusable/button)
+        hit.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            playSound();
+          }
+        });
 
-  // cleanup UI when audio ends
-  audio.addEventListener('ended', () => hit.classList.remove('playing'));
-});
-</script>
+        // cleanup UI when audio ends
+        audio.addEventListener("ended", () => hit.classList.remove("playing"));
+      });
+    </script>
   </body>
 </html>
