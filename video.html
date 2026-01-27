@@ -4,7 +4,14 @@ layout: video
 
 <h1>HOA HOA HOA HOA HOA</h1>
 <div class="tv-frame">
-  <iframe src="/assets/videos/edward.mp4"></iframe>
+  <video
+    src="{{ '/assets/videos/edward.mp4' | relative_url }}"
+    controls
+    playsinline
+    preload="metadata"
+    aria-label="VHS video"
+  ></video>
+  <div class="static-overlay" aria-hidden="true"></div>
 </div>
 
 <p
