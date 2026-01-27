@@ -1106,13 +1106,14 @@ h1 {
 
 /* Position the video underneath the TV overlay and inset it to fit the screen area */
 .tv-frame video {
+  background-color: black;
   position: absolute;
   z-index: 2; /* below the ::after overlay */
   border: none;
-  top: 10%; /* tweak these values to align with the transparent screen of tv.png */
-  left: 22%;
-  width: 55%;
-  height: 60%;
+  top: 5%; /* tweak these values to align with the transparent screen of tv.png */
+  left: 15%;
+  width: 70%;
+  height: 70%;
   display: block;
   border-radius: 6px;
 }
