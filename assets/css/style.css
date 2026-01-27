@@ -1103,3 +1103,13 @@ h1 {
   display: block;
   border-radius: 6px;
 }
+
+button.sticker.s10 {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0; /* invisible */
+  cursor: pointer;
+  pointer-events: auto; /* ensure it can be clicked */
+}
