@@ -843,7 +843,6 @@ h1 {
 /* class applied by JS on pointerdown for a brief ripple */
 .sticker-hit.tap::after,
 .sticker-hit.tap {
-  opacity: 1;
   transform: scale(1.02);
 }
 
