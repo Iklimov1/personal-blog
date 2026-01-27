@@ -273,18 +273,6 @@ a:hover > .sticker {
   transform: translateX(-50%) rotate(-7deg);
 }
 
-/* faux tape */
-.sticker::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: 35%;
-  width: 60px;
-  height: 18px;
-  background: rgba(255, 255, 255, 0.65);
-  transform: rotate(-4deg);
-}
-
 /* =========================
    PAGE SHELL
    ========================= */
@@ -903,7 +891,7 @@ h1 {
 }
 .sticker-hit.s10 {
   top: 0%;
-  left: 55%;
+  left: 50%;
 }
 .sticker-hit.s11 {
   top: 85%;
