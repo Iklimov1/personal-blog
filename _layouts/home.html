@@ -139,6 +139,12 @@
     <a href="#" class="sticker-hit s13" aria-label="sticker 13"></a>
     <a href="#" class="sticker-hit s14" aria-label="sticker 14"></a>
 
+    <audio
+      id="s10-audio"
+      src="{{ '/assets/audio/s10.mp3' | relative_url }}"
+      preload="auto"
+    ></audio>
+
     <script>
       // Add tap feedback for sticker hit areas
       (function () {
@@ -159,5 +165,35 @@
         });
       })();
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const hit = document.querySelector('.sticker-hit.s10');
+  const audio = document.getElementById('s10-audio');
+  if (!hit || !audio) return;
+
+  // prefer pointer events for touch + mouse
+  const playSound = () => {
+    audio.currentTime = 0;
+    audio.play().catch(() => { /* gesture required / autoplay blocked — ignore */ });
+    hit.classList.add('playing');
+  };
+
+  hit.addEventListener('pointerdown', (e) => {
+    e.preventDefault();
+    playSound();
+  });
+
+  // keyboard support (if element is focusable/button)
+  hit.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      playSound();
+    }
+  });
+
+  // cleanup UI when audio ends
+  audio.addEventListener('ended', () => hit.classList.remove('playing'));
+});
+</script>
   </body>
 </html>
